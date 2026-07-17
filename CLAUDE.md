@@ -1,12 +1,14 @@
 # CLAUDE.md — [WORKING TITLE — pending]
 
 ## What this is
+
 Pre-game coaching web app for League of Legends. Runs in a browser
 window beside the League client. User manually inputs the 10 picks
 during champ select; app surfaces curated, cross-champion coaching
 insights. Differentiator: contextual interaction reasoning, NOT stats.
 
 ## Stack (v1)
+
 - Vite + React. No SSR, no Next.js. [PROPOSED]
 - No backend, no Supabase, no auth. All data is static JSON shipped
   with the app. (One serverless function arrives with the voice
@@ -17,6 +19,7 @@ insights. Differentiator: contextual interaction reasoning, NOT stats.
   inline-style convention.]
 
 ## Workflow — non-negotiable
+
 - Claude chat = architecture, critique, decisions, terminal prompts.
   Claude Code (this session) = implementation only.
 - Implement ONLY what the prompt specifies. Do not touch other files.
@@ -26,11 +29,13 @@ insights. Differentiator: contextual interaction reasoning, NOT stats.
 - No Playwright. No browser automation. Visual verification is manual.
 
 ## Architecture principles
+
 - Maintainable > clever. Readable > compact. No premature abstraction.
 - Components stay focused and understandable. Critical logic stays
   visible — no burying it in abstractions.
 
 ## Data model — protect these decisions
+
 - Interaction entries are PERSPECTIVE-NEUTRAL. Entries store neutral
   facts about champion/ability relationships. The app derives
   warning-vs-advantage from team assignment at runtime. Never encode
@@ -44,10 +49,20 @@ insights. Differentiator: contextual interaction reasoning, NOT stats.
   field until the voice layer needs prioritization.
 - patch_verified is required from day one. Entries without it do not
   ship.
+  - Inclusion criterion: an interaction earns an entry ONLY if it
+    deviates from what the ability's generic description predicts —
+    exceptions, edge cases, non-obvious consequences, and negative
+    entries (X does NOT affect Y despite appearances). Never store
+    generic ability behavior ("Lulu W polymorphs Vayne" = not an entry;
+    "Lulu E reveals stealthed Vayne" = entry; "Yasuo W does NOT block
+    ASol Q" = entry). Negative entries are first-class data.
 
 ## Data pipeline (context — happens outside Claude Code)
-- LLM (Gemini) generates CANDIDATE interactions via targeted
-  archetype sweeps (e.g., projectile ults vs. projectile blockers).
+
+- An LLM (Claude in chat, optionally cross-checked with GPT/Gemini)
+  generates CANDIDATE interactions via targeted archetype sweeps
+  (e.g., projectile ults vs. projectile blockers). LLM output is
+  never trusted directly, regardless of which model produced it.
   LLM output is never trusted directly.
 - Batuhan verifies every entry as expert (Practice Tool when unsure).
 - Claude chat converts verified analysis into schema JSON.
@@ -55,6 +70,7 @@ insights. Differentiator: contextual interaction reasoning, NOT stats.
   edit interaction data content in the terminal.
 
 ## Build order
+
 1. Ability interaction engine + manual pick input
 2. Team comp analysis (tag-based — this is where tag rules live;
    interaction warnings stay curated)
@@ -62,6 +78,7 @@ insights. Differentiator: contextual interaction reasoning, NOT stats.
 4. ElevenLabs voice summary (last; brings the one serverless function)
 
 ## Scope discipline
+
 - v1 champion coverage: depth over breadth. [Initial set: TBD —
   scope decision pending.]
 - If a task sprawls, stop and flag it instead of improvising.
