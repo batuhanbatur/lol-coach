@@ -1,0 +1,57 @@
+[
+  {
+    "id": "mordekaiser-r-illaoi-e",
+    "champions": ["Mordekaiser", "Illaoi"],
+    "abilities": ["Mordekaiser R", "Illaoi E"],
+    "interaction_type": "counters",
+    "description": "If Mordekaiser ults Illaoi or a target tethered by her E, the spirit stays outside the Death Realm — her strongest pressure tool does not follow into the realm.",
+    "severity": "high",
+    "timing_note": "Relevant both in lane and teamfights; Morde can ult specifically to strip an active E.",
+    "tags": ["death-realm", "spirit", "zone-exclusion"],
+    "patch_verified": null
+  },
+  {
+    "id": "sylas-r-mordekaiser-r",
+    "champions": ["Sylas", "Mordekaiser"],
+    "abilities": ["Sylas R", "Mordekaiser R"],
+    "interaction_type": "counters",
+    "description": "Sylas can steal Death Realm. A stolen realm isolates any target from their team, and no one outside can interact — a threat to Mordekaiser's entire team, not just Mordekaiser.",
+    "severity": "critical",
+    "timing_note": "Threat is active whenever Sylas has ult available; track his R cooldown.",
+    "tags": ["ult-steal", "death-realm", "isolation"],
+    "patch_verified": null
+  },
+  {
+    "id": "asol-q-yasuo-w",
+    "champions": ["AurelionSol", "Yasuo"],
+    "abilities": ["Aurelion Sol Q", "Yasuo W"],
+    "interaction_type": "no_effect",
+    "description": "Aurelion Sol's Q is a channeled beam, not a projectile — Wind Wall does not block it.",
+    "severity": "medium",
+    "timing_note": "Do not hold or waste W for the beam; it will pass through regardless.",
+    "tags": ["windwall", "projectile-exception", "negative-entry"],
+    "patch_verified": null
+  },
+  {
+    "id": "milio-r-lillia-r",
+    "champions": ["Milio", "Lillia"],
+    "abilities": ["Milio R", "Lillia R"],
+    "interaction_type": "counters",
+    "description": "Milio R cleanses Lillia's ult from all allies in radius — including during the drowsy phase, before sleep ever lands.",
+    "severity": "high",
+    "timing_note": "Sleep is cast-inhibiting but drowsy is not: if Lillia's ult catches Milio himself, he must R during his own drowsy phase — once asleep, he cannot cast at all. If it catches only allies, he can cleanse them freely even after sleep lands. Lillia should aim to include Milio in the ult; Milio must react within the drowsy window when hit.",
+    "tags": ["cleanse", "sleep", "engage-denial"],
+    "patch_verified": null
+  },
+  {
+    "id": "lulu-e-vayne-r",
+    "champions": ["Lulu", "Vayne"],
+    "abilities": ["Lulu E", "Vayne R"],
+    "interaction_type": "counters",
+    "description": "Lulu E grants True Sight of its target — a Vayne tagged by E stays visible through her R+Q invisibility.",
+    "severity": "high",
+    "timing_note": "The reveal lasts 4 seconds — tag Vayne as she commits; she can wait out an early tag before tumbling.",
+    "tags": ["true-sight", "stealth"],
+    "patch_verified": null
+  }
+]

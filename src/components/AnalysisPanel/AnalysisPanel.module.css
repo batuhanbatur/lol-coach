@@ -1,0 +1,99 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.empty {
+  color: #8a8782;
+  font-size: 0.9rem;
+}
+
+.card {
+  background: #15181e;
+  border-left: 3px solid transparent;
+  border-radius: 4px;
+  padding: 0.875rem 1rem;
+}
+
+.accentCritical {
+  border-left-color: #e5484d;
+}
+
+.accentWarning {
+  border-left-color: #d9a13b;
+}
+
+.accentAdvantage {
+  border-left-color: #46a758;
+}
+
+.accentInfo {
+  border-left-color: #4f8f9e;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.severityLabel {
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+  color: #8a8782;
+}
+
+.championPair {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.85rem;
+  color: #e8e6e3;
+}
+
+.champion {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.championIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  display: block;
+}
+
+.youChip {
+  margin-left: auto;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: #b5b2ad;
+  background: #21252d;
+  border-radius: 3px;
+  padding: 0.125rem 0.375rem;
+}
+
+.description {
+  color: #e8e6e3;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.timingNote {
+  color: #8a8782;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  margin: 0.375rem 0 0;
+}
+
+@media (max-width: 700px) {
+  .card {
+    width: 100%;
+  }
+}
