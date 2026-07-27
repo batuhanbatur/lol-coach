@@ -23,6 +23,9 @@ v1 scope discipline: nothing moves up a tier without a chat decision.
 - [ ] Champion coverage indicator: show users which champions are
       "fully mapped" — turns depth-over-breadth into a visible
       trust guarantee.
+- [ ] Row order matches pick order: drag role labels to reorder
+      rows (display-only, roles stay bound to slots, engine
+      untouched). Mirrors client layout for positional copying.
 
 ## V2 — committed direction
 

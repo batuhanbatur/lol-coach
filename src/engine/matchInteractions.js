@@ -40,13 +40,18 @@ function deriveKind(entry, champTeams, myTeam) {
 
   switch (entry.interaction_type) {
     case 'counters':
-      if (actorTeam === targetTeam) return 'info'; // inert, but worth knowing
-      return actorTeam === myTeam ? 'advantage' : 'warning';
-
     case 'no_effect':
-      // The actor's ability does NOT work on the target. If the actor is
-      // mine, I might waste the ability believing it works → warning.
-      // If the actor is the enemy's, it's just useful to know → info.
+      // Adversarial types: the interaction is only possible between
+      // opposing champions (e.g. Sylas cannot steal an ally's ult).
+      // Same team means it cannot occur in game, so the entry is inactive.
+      if (actorTeam === targetTeam) return null;
+      if (entry.interaction_type === 'counters') {
+        return actorTeam === myTeam ? 'advantage' : 'warning';
+      }
+      // no_effect: the actor's ability does NOT work on the target. If the
+      // actor is mine, I might waste the ability believing it works →
+      // warning. If the actor is the enemy's, it's just useful to know →
+      // info.
       return actorTeam === myTeam ? 'warning' : 'info';
 
     case 'synergy':

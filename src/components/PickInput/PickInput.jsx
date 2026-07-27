@@ -169,7 +169,7 @@ function PickInput({ champions, version, picks, onPicksChange, mySlot, onMySlotC
             </button>
           )}
 
-          {champion && !isActive && !isMe && (
+          {!isActive && !isMe && (
             <button
               type="button"
               className={styles.meButton}

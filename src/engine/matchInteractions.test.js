@@ -58,10 +58,9 @@ describe('counters derivation', () => {
     expect(result.kind).toBe('advantage');
   });
 
-  it('both on same team → info', () => {
+  it('both on same team → inactive', () => {
     const draft = makeDraft({ blue: ['Actor', 'Target'] });
-    const [result] = analyzeInteractions(draft, [entry]);
-    expect(result.kind).toBe('info');
+    expect(analyzeInteractions(draft, [entry])).toEqual([]);
   });
 });
 
@@ -92,6 +91,11 @@ describe('no_effect derivation', () => {
     const draft = makeDraft({ blue: ['Target'], red: ['Actor'] });
     const [result] = analyzeInteractions(draft, [entry]);
     expect(result.kind).toBe('info');
+  });
+
+  it('both on same team → inactive', () => {
+    const draft = makeDraft({ blue: ['Actor', 'Target'] });
+    expect(analyzeInteractions(draft, [entry])).toEqual([]);
   });
 });
 
