@@ -5,17 +5,13 @@ import styles from './PickInput.module.css'
 
 const ROLES = ['Top', 'Jungle', 'Mid', 'ADC', 'Support']
 
-function PickInput({ champions, version, picks, onPicksChange }) {
+function PickInput({ champions, version, picks, onPicksChange, mySlot, onMySlotChange, excludedIds }) {
   const [activeSlot, setActiveSlot] = useState(null)
   const [query, setQuery] = useState('')
   const [dragSlot, setDragSlot] = useState(null)
   const [dropTarget, setDropTarget] = useState(null)
 
-  const pickedIds = [...picks.ally, ...picks.enemy]
-    .map((slot) => slot.championId)
-    .filter(Boolean)
-
-  const results = activeSlot ? searchChampions(query, champions, pickedIds) : []
+  const results = activeSlot ? searchChampions(query, champions, excludedIds) : []
 
   function championById(id) {
     return champions.find((champion) => champion.id === id)
@@ -77,7 +73,7 @@ function PickInput({ champions, version, picks, onPicksChange }) {
     const source = picks[dragSlot.team][dragSlot.index]
     const target = picks[team][index]
 
-    const next = { ally: [...picks.ally], enemy: [...picks.enemy] }
+    const next = { blue: [...picks.blue], red: [...picks.red] }
     next[dragSlot.team][dragSlot.index] = { ...source, championId: target.championId }
     next[team][index] = { ...target, championId: source.championId }
     onPicksChange(next)
@@ -89,6 +85,7 @@ function PickInput({ champions, version, picks, onPicksChange }) {
     const isActive = activeSlot?.team === team && activeSlot?.index === index
     const isDragging = dragSlot?.team === team && dragSlot?.index === index
     const isDropTarget = dropTarget?.team === team && dropTarget?.index === index
+    const isMe = mySlot?.team === team && mySlot?.index === index
 
     const slotClassName = [
       styles.slot,
@@ -101,7 +98,19 @@ function PickInput({ champions, version, picks, onPicksChange }) {
 
     return (
       <div key={slot.role} className={styles.slotRow}>
-        <span className={styles.roleLabel}>{slot.role}</span>
+        <span className={styles.roleLabel}>
+          {isMe && (
+            <button
+              type="button"
+              className={styles.meBadge}
+              title="Untag yourself"
+              onClick={() => onMySlotChange(null)}
+            >
+              ME
+            </button>
+          )}
+          {slot.role}
+        </span>
         <div
           className={slotClassName}
           draggable={Boolean(champion)}
@@ -160,6 +169,17 @@ function PickInput({ champions, version, picks, onPicksChange }) {
             </button>
           )}
 
+          {champion && !isActive && !isMe && (
+            <button
+              type="button"
+              className={styles.meButton}
+              title="Tag this pick as you"
+              onClick={() => onMySlotChange({ team, index })}
+            >
+              ME
+            </button>
+          )}
+
           {isActive && results.length > 0 && (
             <ul className={styles.results}>
               {results.map((result) => (
@@ -198,8 +218,8 @@ function PickInput({ champions, version, picks, onPicksChange }) {
 
   return (
     <div className={styles.columns}>
-      {renderTeam('ally', 'Your Team')}
-      {renderTeam('enemy', 'Enemy Team')}
+      {renderTeam('blue', 'Blue Team')}
+      {renderTeam('red', 'Red Team')}
     </div>
   )
 }

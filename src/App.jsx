@@ -3,6 +3,7 @@ import { fetchLatestVersion, fetchChampions } from './services/ddragon'
 import { analyzeInteractions } from './engine/matchInteractions'
 import interactions from './data/interactions.json'
 import PickInput, { ROLES } from './components/PickInput/PickInput'
+import BanRow from './components/BanRow/BanRow'
 import AnalysisPanel from './components/AnalysisPanel/AnalysisPanel'
 import styles from './components/PickInput/PickInput.module.css'
 
@@ -14,18 +15,19 @@ function App() {
   const [version, setVersion] = useState(null)
   const [champions, setChampions] = useState([])
   const [status, setStatus] = useState('loading')
-  const [picks, setPicks] = useState({ ally: emptyTeam(), enemy: emptyTeam() })
+  const [picks, setPicks] = useState({ blue: emptyTeam(), red: emptyTeam() })
+  const [bans, setBans] = useState(Array(10).fill(null))
+  const [mySlot, setMySlot] = useState(null)
 
-  // Engine speaks blue/red; ally maps to blue, so the default perspective
-  // (mySlot null → blue) is the user's team.
   const results = useMemo(
-    () =>
-      analyzeInteractions(
-        { blue: picks.ally, red: picks.enemy, bans: [], mySlot: null },
-        interactions
-      ),
-    [picks]
+    () => analyzeInteractions({ ...picks, bans, mySlot }, interactions),
+    [picks, bans, mySlot]
   )
+
+  const excludedIds = [...picks.blue, ...picks.red]
+    .map((slot) => slot.championId)
+    .concat(bans)
+    .filter(Boolean)
 
   useEffect(() => {
     async function load() {
@@ -47,7 +49,22 @@ function App() {
 
   return (
     <div className={styles.page}>
-      <PickInput champions={champions} version={version} picks={picks} onPicksChange={setPicks} />
+      <PickInput
+        champions={champions}
+        version={version}
+        picks={picks}
+        onPicksChange={setPicks}
+        mySlot={mySlot}
+        onMySlotChange={setMySlot}
+        excludedIds={excludedIds}
+      />
+      <BanRow
+        champions={champions}
+        version={version}
+        bans={bans}
+        onBansChange={setBans}
+        excludedIds={excludedIds}
+      />
       <section aria-label="analysis" className={styles.analysisSection}>
         <AnalysisPanel results={results} champions={champions} version={version} />
       </section>
