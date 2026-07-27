@@ -8,7 +8,7 @@
     "severity": "high",
     "timing_note": "Relevant both in lane and teamfights; Morde can ult specifically to strip an active E.",
     "tags": ["death-realm", "spirit", "zone-exclusion"],
-    "patch_verified": null
+    "patch_verified": "26.14"
   },
   {
     "id": "sylas-r-mordekaiser-r",
@@ -19,7 +19,7 @@
     "severity": "critical",
     "timing_note": "Threat is active whenever Sylas has ult available; track his R cooldown.",
     "tags": ["ult-steal", "death-realm", "isolation"],
-    "patch_verified": null
+    "patch_verified": "26.14"
   },
   {
     "id": "asol-q-yasuo-w",
@@ -30,7 +30,7 @@
     "severity": "medium",
     "timing_note": "Do not hold or waste W for the beam; it will pass through regardless.",
     "tags": ["windwall", "projectile-exception", "negative-entry"],
-    "patch_verified": null
+    "patch_verified": "26.14"
   },
   {
     "id": "milio-r-lillia-r",
@@ -41,7 +41,7 @@
     "severity": "high",
     "timing_note": "Sleep is cast-inhibiting but drowsy is not: if Lillia's ult catches Milio himself, he must R during his own drowsy phase — once asleep, he cannot cast at all. If it catches only allies, he can cleanse them freely even after sleep lands. Lillia should aim to include Milio in the ult; Milio must react within the drowsy window when hit.",
     "tags": ["cleanse", "sleep", "engage-denial"],
-    "patch_verified": null
+    "patch_verified": "26.14"
   },
   {
     "id": "lulu-e-vayne-r",
@@ -52,6 +52,6 @@
     "severity": "high",
     "timing_note": "The reveal lasts 4 seconds — tag Vayne as she commits; she can wait out an early tag before tumbling.",
     "tags": ["true-sight", "stealth"],
-    "patch_verified": null
+    "patch_verified": "26.14"
   }
 ]
