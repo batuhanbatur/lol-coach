@@ -18,6 +18,17 @@ insights. Differentiator: contextual interaction reasoning, NOT stats.
 - Styling: CSS Modules. [PROPOSED — do not carry over Pizza God's
   inline-style convention.]
 
+## Visual identity
+
+- Coach-dark: calm, editorial, confident. Advice from an expert,
+  not a stats dashboard. Restraint over density.
+- Near-black background (~#0e1014), elevated card surface, soft
+  off-white text (~#e8e6e3). Never pure black/white.
+- Severity colors are the ONLY loud colors: critical red, warning
+  amber, info muted blue/teal, advantage green.
+- One sans typeface; hierarchy via size/weight, not boxes/borders.
+  Spacing over borders. No Hextech ornamentation.
+
 ## Workflow — non-negotiable
 
 - Claude chat = architecture, critique, decisions, terminal prompts.
@@ -43,27 +54,31 @@ insights. Differentiator: contextual interaction reasoning, NOT stats.
 - Four data files: interactions.json, champion_tags.json,
   summoner_interactions.json, comp_warnings.json.
 - Interaction schema: id, champions[], abilities[], interaction_type
-  (counters | synergy | amplifies | enables | warning), description,
-  severity, timing_note, tags[], patch_verified.
+  (counters | synergy | amplifies | enables | warning | no_effect),
+  description, severity, timing_note, tags[], patch_verified.
 - timing_note is presentational text only. No structured condition
   field until the voice layer needs prioritization.
 - patch_verified is required from day one. Entries without it do not
   ship.
-  - Inclusion criterion: an interaction earns an entry ONLY if it
-    deviates from what the ability's generic description predicts —
-    exceptions, edge cases, non-obvious consequences, and negative
-    entries (X does NOT affect Y despite appearances). Never store
-    generic ability behavior ("Lulu W polymorphs Vayne" = not an entry;
-    "Lulu E reveals stealthed Vayne" = entry; "Yasuo W does NOT block
-    ASol Q" = entry). Negative entries are first-class data.
+- Inclusion criterion: an interaction earns an entry ONLY if it
+  deviates from what the ability's generic description predicts —
+  exceptions, edge cases, non-obvious consequences, and negative
+  entries (X does NOT affect Y despite appearances). Never store
+  generic ability behavior. Negative entries are first-class data.
+- patch_verified evidence (any one suffices):
+  (a) wiki.leagueoflegends.com mechanics pages (NOT in-game
+      tooltips — tooltips are exactly what entries deviate from),
+  (b) known-cold: Batuhan certifies from direct play experience
+      on the current patch,
+  (c) direct in-game test, when (a) and (b) both leave doubt.
+  Disputed entries (any model or person disagrees) require (a) or (c).
 
 ## Data pipeline (context — happens outside Claude Code)
 
 - An LLM (Claude in chat, optionally cross-checked with GPT/Gemini)
-  generates CANDIDATE interactions via targeted archetype sweeps
-  (e.g., projectile ults vs. projectile blockers). LLM output is
-  never trusted directly, regardless of which model produced it.
-  LLM output is never trusted directly.
+  generates CANDIDATE interactions via targeted archetype sweeps.
+  LLM output is never trusted directly, regardless of which model
+  produced it.
 - Batuhan verifies every entry as expert (Practice Tool when unsure).
 - Claude chat converts verified analysis into schema JSON.
 - Claude Code only ever consumes finished JSON. Never generate or
