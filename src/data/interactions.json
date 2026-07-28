@@ -54,4 +54,104 @@
     "tags": ["true-sight", "stealth"],
     "patch_verified": "26.14"
   }
+,
+  {
+    "id": "yasuo-w-illaoi-e",
+    "champions": ["Yasuo", "Illaoi"],
+    "abilities": ["Yasuo W", "Illaoi E"],
+    "interaction_type": "counters",
+    "description": "Yasuo W blocks Illaoi E — the spirit-pull tendril is a projectile and can be denied entirely.",
+    "severity": "medium",
+    "timing_note": "Wall must be up before the tendril reaches its target.",
+    "tags": ["windwall", "projectile-block", "engage-denial"],
+    "patch_verified": "26.14"
+  },
+  {
+    "id": "yasuo-w-sylas-e",
+    "champions": ["Yasuo", "Sylas"],
+    "abilities": ["Yasuo W", "Sylas E"],
+    "interaction_type": "counters",
+    "description": "Yasuo W blocks the chain throw of Sylas E (second cast), denying his primary engage — chains don't read as projectiles but count as one.",
+    "severity": "high",
+    "timing_note": "Only the second cast (chain throw) is blockable; the first dash is not.",
+    "tags": ["windwall", "projectile-block", "engage-denial"],
+    "patch_verified": "26.14"
+  },
+  {
+    "id": "yasuo-w-asol-r",
+    "champions": ["Yasuo", "AurelionSol"],
+    "abilities": ["Yasuo W", "Aurelion Sol R"],
+    "interaction_type": "no_effect",
+    "description": "Yasuo W does not block Aurelion Sol R — it is ground-targeted impact, not a projectile.",
+    "severity": "medium",
+    "timing_note": null,
+    "tags": ["windwall", "projectile-exception", "negative-entry"],
+    "patch_verified": "26.14"
+  },
+  {
+    "id": "yasuo-w-lux-r",
+    "champions": ["Yasuo", "Lux"],
+    "abilities": ["Yasuo W", "Lux R"],
+    "interaction_type": "no_effect",
+    "description": "Yasuo W does not block Lux R — it is an instant beam, not a projectile.",
+    "severity": "medium",
+    "timing_note": null,
+    "tags": ["windwall", "projectile-exception", "negative-entry"],
+    "patch_verified": "26.14"
+  },
+  {
+    "id": "yasuo-w-senna-r",
+    "champions": ["Yasuo", "Senna"],
+    "abilities": ["Yasuo W", "Senna R"],
+    "interaction_type": "no_effect",
+    "description": "Yasuo W does not block Senna R — the global beam passes through.",
+    "severity": "medium",
+    "timing_note": null,
+    "tags": ["windwall", "projectile-exception", "negative-entry"],
+    "patch_verified": "26.14"
+  },
+  {
+    "id": "yasuo-w-velkoz-r",
+    "champions": ["Yasuo", "Velkoz"],
+    "abilities": ["Yasuo W", "Vel'Koz R"],
+    "interaction_type": "no_effect",
+    "description": "Yasuo W does not block Vel'Koz R — channeled beams are not projectiles.",
+    "severity": "low",
+    "timing_note": null,
+    "tags": ["windwall", "projectile-exception", "negative-entry"],
+    "patch_verified": "26.14"
+  },
+  {
+    "id": "yasuo-w-xerath-split",
+    "champions": ["Yasuo", "Xerath"],
+    "abilities": ["Yasuo W", "Xerath Q", "Xerath W", "Xerath E", "Xerath R"],
+    "interaction_type": "no_effect",
+    "description": "Yasuo W does not block Xerath Q, W, or R (artillery, not projectiles) — only Xerath E is a blockable projectile.",
+    "severity": "medium",
+    "timing_note": "E is Xerath's only stun — blocking it removes his pick threat, but his damage still lands through the wall.",
+    "tags": ["windwall", "ability-split", "projectile-exception", "projectile-block"],
+    "patch_verified": "26.14"
+  },
+  {
+    "id": "yasuo-w-mordekaiser-e",
+    "champions": ["Yasuo", "Mordekaiser"],
+    "abilities": ["Yasuo W", "Mordekaiser E"],
+    "interaction_type": "no_effect",
+    "description": "Yasuo W does not block Mordekaiser E — the pull is ground-targeted, not a missile.",
+    "severity": "medium",
+    "timing_note": null,
+    "tags": ["windwall", "projectile-exception", "negative-entry"],
+    "patch_verified": "26.14"
+  },
+  {
+    "id": "yasuo-w-vayne-e",
+    "champions": ["Yasuo", "Vayne"],
+    "abilities": ["Yasuo W", "Vayne E"],
+    "interaction_type": "counters",
+    "description": "Yasuo W blocks Vayne E — the condemn bolt, its knockback, and the stun are all denied if the wall intercepts it.",
+    "severity": "high",
+    "timing_note": "Wall must be between Yasuo and Vayne when the bolt fires.",
+    "tags": ["windwall", "projectile-block", "cc-denial"],
+    "patch_verified": "26.14"
+  }
 ]
