@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 20px 0 16px;
+  border-bottom: 1px solid #2a2e37;
+  margin-bottom: 8px;
+}
+
+.wordmark {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #e6e6e6;
+}
+
+.patch {
+  font-size: 12px;
+  color: #6b6f78;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .header {
+    padding: 16px 0 12px;
+  }
+}

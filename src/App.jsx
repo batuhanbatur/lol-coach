@@ -3,6 +3,7 @@ import { fetchLatestVersion, fetchChampions } from './services/ddragon'
 import { analyzeInteractions } from './engine/matchInteractions'
 import { buildCoverageSet } from './utils/coverage'
 import interactions from './data/interactions.json'
+import Header from './components/Header/Header'
 import PickInput, { ROLES } from './components/PickInput/PickInput'
 import BanRow from './components/BanRow/BanRow'
 import AnalysisPanel from './components/AnalysisPanel/AnalysisPanel'
@@ -52,6 +53,7 @@ function App() {
 
   return (
     <div className={styles.page}>
+      <Header />
       <PickInput
         champions={champions}
         version={version}
