@@ -1,11 +1,14 @@
 import { useEffect, useMemo, useState } from 'react'
 import { fetchLatestVersion, fetchChampions } from './services/ddragon'
 import { analyzeInteractions } from './engine/matchInteractions'
+import { buildCoverageSet } from './utils/coverage'
 import interactions from './data/interactions.json'
 import PickInput, { ROLES } from './components/PickInput/PickInput'
 import BanRow from './components/BanRow/BanRow'
 import AnalysisPanel from './components/AnalysisPanel/AnalysisPanel'
 import styles from './components/PickInput/PickInput.module.css'
+
+const coveredChampions = buildCoverageSet(interactions)
 
 function emptyTeam() {
   return ROLES.map((role) => ({ championId: null, role }))
@@ -57,6 +60,7 @@ function App() {
         mySlot={mySlot}
         onMySlotChange={setMySlot}
         excludedIds={excludedIds}
+        coveredChampions={coveredChampions}
       />
       <BanRow
         champions={champions}

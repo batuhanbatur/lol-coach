@@ -152,6 +152,18 @@
   padding: 0;
 }
 
+.noDataBadge {
+  margin-left: auto;
+  flex-shrink: 0;
+  padding: 1px 6px;
+  background: #232730;
+  border-radius: 3px;
+  color: #6b6f78;
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
 .previousChampion {
   display: flex;
   align-items: center;

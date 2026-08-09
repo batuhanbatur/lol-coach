@@ -154,4 +154,61 @@
     "tags": ["windwall", "projectile-block", "cc-denial"],
     "patch_verified": "26.14"
   }
+  ,
+  {
+    "id": "morde-r-spell-shields",
+    "champions": ["Mordekaiser", "Sivir", "Nocturne"],
+    "abilities": ["Mordekaiser R", "Sivir E", "Nocturne W"],
+    "interaction_type": "counters",
+    "description": "A spell shield fully cancels Morde R — if Sivir E or Nocturne W is up when the cast completes, the ult is wasted entirely, not delayed.",
+    "severity": "high",
+    "timing_note": "Shield must be active at the moment the cast finishes; baiting the cast then shielding denies the whole ult.",
+    "tags": ["death-realm", "spell-shield", "ult-denial"],
+    "patch_verified": null
+  },
+  {
+    "id": "morde-r-karthus-r",
+    "champions": ["Mordekaiser", "Karthus"],
+    "abilities": ["Mordekaiser R", "Karthus R"],
+    "interaction_type": "no_effect",
+    "description": "Karthus R hits champions in every realm — being inside (or dragging someone into) the Death Realm does not dodge it.",
+    "severity": "medium",
+    "timing_note": null,
+    "tags": ["death-realm", "global", "negative-entry"],
+    "patch_verified": null
+  },
+  {
+    "id": "morde-r-kalista-r",
+    "champions": ["Mordekaiser", "Kalista"],
+    "abilities": ["Mordekaiser R", "Kalista R"],
+    "interaction_type": "counters",
+    "description": "Kalista R cannot be cast while her Oathsworn is in another realm — Morde ulting either half of the pair severs their ult combo.",
+    "severity": "high",
+    "timing_note": "Applies for the full realm duration; strongest against engage comps built around Kalista R.",
+    "tags": ["death-realm", "isolation", "ult-denial"],
+    "patch_verified": null
+  },
+  {
+    "id": "morde-r-yasuo-r",
+    "champions": ["Mordekaiser", "Yasuo"],
+    "abilities": ["Mordekaiser R", "Yasuo R"],
+    "interaction_type": "counters",
+    "description": "Morde ulting Yasuo mid-Last Breath yanks him into the Death Realm and interrupts the ult — unless Yasuo's target is Morde himself, in which case both enter and it continues.",
+    "severity": "medium",
+    "timing_note": "Reactive play: requires Morde R available and quick hands during Yasuo's engage.",
+    "tags": ["death-realm", "ult-interrupt"],
+    "patch_verified": null
+  },
+  {
+    "id": "morde-r-tahm-w",
+    "champions": ["Mordekaiser", "TahmKench"],
+    "abilities": ["Mordekaiser R", "Tahm Kench R"],
+    "interaction_type": "no_effect",
+    "description": "Tahm R cannot rescue anyone from the Death Realm — he can carry a devoured ally past the border, but they are displaced back inside when spat out.",
+    "severity": "medium",
+    "timing_note": null,
+    "tags": ["death-realm", "negative-entry", "false-confidence"],
+    "patch_verified": null
+  }
 ]
+

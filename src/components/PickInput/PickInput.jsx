@@ -5,7 +5,7 @@ import styles from './PickInput.module.css'
 
 const ROLES = ['Top', 'Jungle', 'Mid', 'ADC', 'Support']
 
-function PickInput({ champions, version, picks, onPicksChange, mySlot, onMySlotChange, excludedIds }) {
+function PickInput({ champions, version, picks, onPicksChange, mySlot, onMySlotChange, excludedIds, coveredChampions }) {
   const [activeSlot, setActiveSlot] = useState(null)
   const [query, setQuery] = useState('')
   const [dragSlot, setDragSlot] = useState(null)
@@ -158,6 +158,11 @@ function PickInput({ champions, version, picks, onPicksChange, mySlot, onMySlotC
                 className={styles.filledIcon}
               />
               <span className={styles.championName}>{champion.name}</span>
+              {!coveredChampions.has(champion.id) && (
+                <span className={styles.noDataBadge} title="No curated interactions yet">
+                  no data yet
+                </span>
+              )}
             </button>
           ) : (
             <button
