@@ -1,0 +1,1386 @@
+{
+  "Aatrox": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Ahri": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "mid"
+  },
+  "Akali": {
+    "cc": "none",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Akshan": {
+    "cc": "none",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "short",
+    "scaling": "mid"
+  },
+  "Alistar": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Ambessa": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Amumu": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Anivia": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Annie": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "short",
+    "scaling": "mid"
+  },
+  "Aphelios": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Ashe": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "long",
+    "scaling": "late"
+  },
+  "AurelionSol": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Aurora": {
+    "cc": "soft",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "short",
+    "scaling": "late?"
+  },
+  "Azir": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Bard": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "short",
+    "scaling": "late"
+  },
+  "BelVeth": {
+    "cc": "none",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Blitzcrank": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "long",
+    "scaling": "mid"
+  },
+  "Brand": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "mid"
+  },
+  "Braum": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Briar": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Caitlyn": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Camille": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Cassiopeia": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "short",
+    "scaling": "late"
+  },
+  "ChoGath": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Corki": {
+    "cc": "soft",
+    "damageType": "mixed",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "long",
+    "scaling": "mid"
+  },
+  "Darius": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Diana": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "durable",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "DrMundo": {
+    "cc": "soft",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "none",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Draven": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "short",
+    "scaling": "early"
+  },
+  "Ekko": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Elise": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "short",
+    "scaling": "early"
+  },
+  "Evelynn": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Ezreal": {
+    "cc": "none",
+    "damageType": "mixed",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "long",
+    "scaling": "mid"
+  },
+  "Fiddlesticks": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "short",
+    "scaling": "mid"
+  },
+  "Fiora": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "none",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Fizz": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Galio": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Gangplank": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Garen": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Gnar": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "strong",
+    "range": "short",
+    "scaling": "mid"
+  },
+  "Gragas": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "durable",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Graves": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "none",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Gwen": {
+    "cc": "soft",
+    "damageType": "magic",
+    "durability": "durable",
+    "engage": "none",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Hecarim": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Heimerdinger": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "long",
+    "scaling": "mid"
+  },
+  "Hwei": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Illaoi": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "none",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Irelia": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Ivern": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "short",
+    "scaling": "mid"
+  },
+  "Janna": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "short",
+    "scaling": "late"
+  },
+  "JarvanIV": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "early"
+  },
+  "Jax": {
+    "cc": "hard",
+    "damageType": "mixed",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Jayce": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "long",
+    "scaling": "mid"
+  },
+  "Jhin": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Jinx": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "long",
+    "scaling": "late"
+  },
+  "KSante": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "KaiSa": {
+    "cc": "none",
+    "damageType": "mixed",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Kalista": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "short",
+    "scaling": "early"
+  },
+  "Karma": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "early"
+  },
+  "Karthus": {
+    "cc": "soft",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Kassadin": {
+    "cc": "soft",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Katarina": {
+    "cc": "none",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Kayle": {
+    "cc": "soft",
+    "damageType": "mixed",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Kayn": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable?",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Kennen": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "short",
+    "scaling": "mid"
+  },
+  "KhaZix": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Kindred": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Kled": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "early"
+  },
+  "KogMaw": {
+    "cc": "soft",
+    "damageType": "mixed",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "long",
+    "scaling": "late"
+  },
+  "LeBlanc": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "short",
+    "scaling": "mid"
+  },
+  "LeeSin": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "early"
+  },
+  "Leona": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Lillia": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Lissandra": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "short",
+    "scaling": "mid"
+  },
+  "Locke": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid?"
+  },
+  "Lucian": {
+    "cc": "none",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "short",
+    "scaling": "mid"
+  },
+  "Lulu": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Lux": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "mid"
+  },
+  "Malphite": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Malzahar": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "mid"
+  },
+  "Maokai": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "MasterYi": {
+    "cc": "none",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Mel": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Milio": {
+    "cc": "none",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "short",
+    "scaling": "late"
+  },
+  "MissFortune": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "short",
+    "scaling": "mid"
+  },
+  "Mordekaiser": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Morgana": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "mid"
+  },
+  "Naafiri": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Nami": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Nasus": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "none",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Nautilus": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Neeko": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "short",
+    "scaling": "mid"
+  },
+  "Nidalee": {
+    "cc": "none",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "long",
+    "scaling": "early"
+  },
+  "Nilah": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Nocturne": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "NunuWillump": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "early"
+  },
+  "Olaf": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Orianna": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Ornn": {
+    "cc": "hard",
+    "damageType": "mixed",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Pantheon": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "early"
+  },
+  "Poppy": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Pyke": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "early"
+  },
+  "Qiyana": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Quinn": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "short",
+    "scaling": "early"
+  },
+  "Rakan": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Rammus": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "RekSai": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "early"
+  },
+  "Rell": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "RenataGlasc": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Renekton": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "early"
+  },
+  "Rengar": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Riven": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Rumble": {
+    "cc": "soft",
+    "damageType": "magic",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "short",
+    "scaling": "mid"
+  },
+  "Ryze": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Samira": {
+    "cc": "none",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "short",
+    "scaling": "mid"
+  },
+  "Sejuani": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Senna": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Seraphine": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Sett": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Shaco": {
+    "cc": "hard",
+    "damageType": "mixed",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "melee",
+    "scaling": "mid?"
+  },
+  "Shen": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Shyvana": {
+    "cc": "none",
+    "damageType": "mixed",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Singed": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Sion": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Sivir": {
+    "cc": "none",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Skarner": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Smolder": {
+    "cc": "soft",
+    "damageType": "mixed",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Sona": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Soraka": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Swain": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "short",
+    "scaling": "mid"
+  },
+  "Sylas": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Syndra": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "late"
+  },
+  "TahmKench": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Taliyah": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "mid"
+  },
+  "Talon": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Taric": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Teemo": {
+    "cc": "soft",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Thresh": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Tristana": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Trundle": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "none",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Tryndamere": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "none",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "TwistedFate": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "mid"
+  },
+  "Twitch": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Udyr": {
+    "cc": "hard",
+    "damageType": "mixed",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Urgot": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "short",
+    "scaling": "mid"
+  },
+  "Varus": {
+    "cc": "hard",
+    "damageType": "mixed",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "long",
+    "scaling": "mid"
+  },
+  "Vayne": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Veigar": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "late"
+  },
+  "VelKoz": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "mid"
+  },
+  "Vex": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "long",
+    "scaling": "mid"
+  },
+  "Vi": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Viego": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Viktor": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Vladimir": {
+    "cc": "none",
+    "damageType": "magic",
+    "durability": "durable",
+    "engage": "none",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Volibear": {
+    "cc": "hard",
+    "damageType": "mixed",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Warwick": {
+    "cc": "hard",
+    "damageType": "mixed",
+    "durability": "durable",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "early"
+  },
+  "Wukong": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Xayah": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Xerath": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "late"
+  },
+  "XinZhao": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "early"
+  },
+  "Yasuo": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Yone": {
+    "cc": "hard",
+    "damageType": "mixed",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "late"
+  },
+  "Yorick": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "none",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Yunara": {
+    "cc": "soft",
+    "damageType": "mixed",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Yuumi": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Zaahen": {
+    "cc": "hard",
+    "damageType": "physical",
+    "durability": "durable",
+    "engage": "weak",
+    "range": "melee",
+    "scaling": "mid?"
+  },
+  "Zac": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "tank",
+    "engage": "strong",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Zed": {
+    "cc": "soft",
+    "damageType": "physical",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "melee",
+    "scaling": "mid"
+  },
+  "Zeri": {
+    "cc": "soft",
+    "damageType": "mixed",
+    "durability": "squishy",
+    "engage": "none",
+    "range": "short",
+    "scaling": "late"
+  },
+  "Ziggs": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Zilean": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "late"
+  },
+  "Zoe": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "weak",
+    "range": "long",
+    "scaling": "mid"
+  },
+  "Zyra": {
+    "cc": "hard",
+    "damageType": "magic",
+    "durability": "squishy",
+    "engage": "strong",
+    "range": "long",
+    "scaling": "mid"
+  }
+}
