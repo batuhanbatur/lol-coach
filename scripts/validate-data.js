@@ -1,5 +1,5 @@
-// Validates src/data/interactions.json against the schema in CLAUDE.md.
-// Plain Node, no dependencies.
+// Validates src/data/interactions.json and src/data/champion_tags.json
+// against the schemas in CLAUDE.md. Plain Node, no dependencies.
 
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
@@ -7,6 +7,7 @@ import path from 'node:path'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DATA_PATH = path.join(__dirname, '..', 'src', 'data', 'interactions.json')
+const CHAMPION_TAGS_PATH = path.join(__dirname, '..', 'src', 'data', 'champion_tags.json')
 
 const INTERACTION_TYPES = new Set([
   'counters',
@@ -120,6 +121,118 @@ function validateEntry(entry, index, errors, warnings, seenIds) {
   }
 }
 
+// --- champion_tags.json ---
+
+const PASCAL_CASE = /^[A-Z][A-Za-z0-9]*$/
+const CHAMPION_TAG_FIELDS = ['damageType', 'durability', 'engage', 'cc', 'range', 'scaling']
+const CHAMPION_TAG_ALLOWED = {
+  damageType: new Set(['physical', 'magic', 'mixed']),
+  durability: new Set(['squishy', 'durable', 'tank']),
+  engage: new Set(['none', 'weak', 'strong']),
+  cc: new Set(['none', 'soft', 'hard']),
+  range: new Set(['melee', 'short', 'long']),
+  scaling: new Set(['early', 'mid', 'late']),
+}
+const CHAMPION_COUNT_MIN = 170
+const CHAMPION_COUNT_MAX = 180
+
+// JSON.parse silently collapses duplicate keys, so a duplicate top-level
+// champion key must be caught by scanning the raw text instead. This
+// schema is flat (every value is a string), so any line matching
+// `"key": {` is a top-level champion entry, never a nested field.
+const TOP_LEVEL_KEY_PATTERN = /^\s*"([^"\\]+)"\s*:\s*\{/gm
+
+function findDuplicateChampionKeys(raw) {
+  const seen = new Set()
+  const duplicates = new Set()
+  let match
+  while ((match = TOP_LEVEL_KEY_PATTERN.exec(raw)) !== null) {
+    const key = match[1]
+    if (seen.has(key)) {
+      duplicates.add(key)
+    } else {
+      seen.add(key)
+    }
+  }
+  return duplicates
+}
+
+function validateChampionTags(champion, tags, errors) {
+  if (!PASCAL_CASE.test(champion)) {
+    errors.push(`champion_tags "${champion}": key is not PascalCase`)
+  }
+
+  if (typeof tags !== 'object' || tags === null || Array.isArray(tags)) {
+    errors.push(`champion_tags "${champion}": value must be an object`)
+    return
+  }
+
+  const keys = Object.keys(tags)
+
+  for (const field of CHAMPION_TAG_FIELDS) {
+    if (!(field in tags)) {
+      errors.push(`champion_tags "${champion}": missing field "${field}"`)
+    }
+  }
+
+  for (const key of keys) {
+    if (!CHAMPION_TAG_FIELDS.includes(key)) {
+      errors.push(`champion_tags "${champion}": unexpected extra field "${key}"`)
+    }
+  }
+
+  for (const field of CHAMPION_TAG_FIELDS) {
+    if (!(field in tags)) continue
+    const value = tags[field]
+    const allowed = CHAMPION_TAG_ALLOWED[field]
+    if (typeof value !== 'string' || !allowed.has(value)) {
+      errors.push(
+        `champion_tags "${champion}": ${field} "${value}" is not one of ${[...allowed].join(' | ')}`
+      )
+    }
+  }
+}
+
+// Returns the champion count found, or null if the file couldn't be
+// read/parsed far enough to count entries.
+function runChampionTagsValidation(errors, warnings) {
+  let raw
+  try {
+    raw = readFileSync(CHAMPION_TAGS_PATH, 'utf-8')
+  } catch (error) {
+    errors.push(`Failed to read ${CHAMPION_TAGS_PATH}: ${error.message}`)
+    return null
+  }
+
+  let data
+  try {
+    data = JSON.parse(raw)
+  } catch (error) {
+    errors.push(`Failed to parse ${CHAMPION_TAGS_PATH} as JSON: ${error.message}`)
+    return null
+  }
+
+  if (typeof data !== 'object' || data === null || Array.isArray(data)) {
+    errors.push(`${CHAMPION_TAGS_PATH} must contain a JSON object keyed by champion name`)
+    return null
+  }
+
+  for (const duplicate of findDuplicateChampionKeys(raw)) {
+    errors.push(`champion_tags "${duplicate}": duplicate key`)
+  }
+
+  const champions = Object.keys(data)
+  champions.forEach((champion) => validateChampionTags(champion, data[champion], errors))
+
+  if (champions.length < CHAMPION_COUNT_MIN || champions.length > CHAMPION_COUNT_MAX) {
+    warnings.push(
+      `champion_tags.json has ${champions.length} champions, expected roughly ${CHAMPION_COUNT_MIN}-${CHAMPION_COUNT_MAX}`
+    )
+  }
+
+  return champions.length
+}
+
 function main() {
   let raw
   try {
@@ -148,6 +261,8 @@ function main() {
 
   entries.forEach((entry, index) => validateEntry(entry, index, errors, warnings, seenIds))
 
+  const championCount = runChampionTagsValidation(errors, warnings)
+
   for (const warning of warnings) {
     console.warn(`⚠ ${warning}`)
   }
@@ -160,7 +275,10 @@ function main() {
     process.exit(1)
   }
 
-  console.log(`✓ ${entries.length} entries valid`)
+  console.log(`✓ ${entries.length} interaction entries valid`)
+  if (championCount !== null) {
+    console.log(`✓ ${championCount} champion_tags entries valid`)
+  }
   process.exit(0)
 }
 

@@ -200,7 +200,7 @@
     "patch_verified": "26.14"
   },
   {
-    "id": "morde-r-tahm-w",
+    "id": "morde-r-tahm-r",
     "champions": ["Mordekaiser", "TahmKench"],
     "abilities": ["Mordekaiser R", "Tahm Kench R"],
     "interaction_type": "no_effect",
