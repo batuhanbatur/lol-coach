@@ -157,8 +157,19 @@
   ,
   {
     "id": "morde-r-spell-shields",
-    "champions": ["Mordekaiser", "Sivir", "Nocturne"],
-    "abilities": ["Mordekaiser R", "Sivir E", "Nocturne W"],
+    "champions": ["Mordekaiser", "Sivir"],
+    "abilities": ["Mordekaiser R", "Sivir E"],
+    "interaction_type": "counters",
+    "description": "A spell shield fully cancels Morde R — if Sivir E or Nocturne W is up when the cast completes, the ult is wasted entirely, not delayed.",
+    "severity": "high",
+    "timing_note": "Shield must be active at the moment the cast finishes; baiting the cast then shielding denies the whole ult.",
+    "tags": ["death-realm", "spell-shield", "ult-denial"],
+    "patch_verified": "26.14"
+  },
+  {
+    "id": "morde-r-spell-shields2",
+    "champions": ["Mordekaiser", "Nocturne"],
+    "abilities": ["Mordekaiser R", "Nocturne W"],
     "interaction_type": "counters",
     "description": "A spell shield fully cancels Morde R — if Sivir E or Nocturne W is up when the cast completes, the ult is wasted entirely, not delayed.",
     "severity": "high",

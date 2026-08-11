@@ -101,7 +101,7 @@
     "durability": "squishy",
     "engage": "weak",
     "range": "short",
-    "scaling": "late?"
+    "scaling": "mid"
   },
   "Azir": {
     "cc": "hard",
@@ -506,7 +506,7 @@
   "Kayn": {
     "cc": "hard",
     "damageType": "physical",
-    "durability": "durable?",
+    "durability": "durable",
     "engage": "weak",
     "range": "melee",
     "scaling": "mid"
@@ -597,7 +597,7 @@
     "durability": "squishy",
     "engage": "weak",
     "range": "melee",
-    "scaling": "mid?"
+    "scaling": "mid"
   },
   "Lucian": {
     "cc": "none",
@@ -957,7 +957,7 @@
     "durability": "squishy",
     "engage": "none",
     "range": "melee",
-    "scaling": "mid?"
+    "scaling": "mid"
   },
   "Shen": {
     "cc": "hard",
@@ -1325,7 +1325,7 @@
     "durability": "durable",
     "engage": "weak",
     "range": "melee",
-    "scaling": "mid?"
+    "scaling": "mid"
   },
   "Zac": {
     "cc": "hard",
