@@ -22,25 +22,31 @@ function AnalysisPanel({ results, champions, version }) {
 
   return (
     <div className={styles.panel}>
-      {results.map(({ entry, kind, involvesMe }) => (
+      {results.map(({ entry, kind, involvesMe, isComp }) => (
         <article
           key={entry.id}
           className={`${styles.card} ${accentClass(kind, entry.severity)}`}
         >
           <header className={styles.cardHeader}>
             <span className={styles.severityLabel}>{entry.severity}</span>
-            <span className={styles.championPair}>
-              {entry.champions.map((championId) => (
-                <span key={championId} className={styles.champion}>
-                  <img
-                    src={championIconUrl(version, championId)}
-                    alt=""
-                    className={styles.championIcon}
-                  />
-                  {championName(championId)}
-                </span>
-              ))}
-            </span>
+            {isComp ? (
+              <span className={styles.compLabel}>
+                {entry.team === 'blue' ? 'Blue' : 'Red'} team comp
+              </span>
+            ) : (
+              <span className={styles.championPair}>
+                {entry.champions.map((championId) => (
+                  <span key={championId} className={styles.champion}>
+                    <img
+                      src={championIconUrl(version, championId)}
+                      alt=""
+                      className={styles.championIcon}
+                    />
+                    {championName(championId)}
+                  </span>
+                ))}
+              </span>
+            )}
             {involvesMe && <span className={styles.youChip}>YOU</span>}
           </header>
           <p className={styles.description}>{entry.description}</p>

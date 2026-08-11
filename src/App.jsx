@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
 import { fetchLatestVersion, fetchChampions } from './services/ddragon'
 import { analyzeInteractions } from './engine/matchInteractions'
+import { analyzeCompWarnings } from './engine/compWarnings'
 import { buildCoverageSet } from './utils/coverage'
 import interactions from './data/interactions.json'
+import championTags from './data/champion_tags.json'
 import Header from './components/Header/Header'
 import PickInput, { ROLES } from './components/PickInput/PickInput'
 import BanRow from './components/BanRow/BanRow'
@@ -23,10 +25,17 @@ function App() {
   const [bans, setBans] = useState(Array(10).fill(null))
   const [mySlot, setMySlot] = useState(null)
 
-  const results = useMemo(
+  const interactionResults = useMemo(
     () => analyzeInteractions({ ...picks, bans, mySlot }, interactions),
     [picks, bans, mySlot]
   )
+
+  const compResults = useMemo(
+    () => analyzeCompWarnings({ ...picks, mySlot }, championTags),
+    [picks, mySlot]
+  )
+
+  const results = [...interactionResults, ...compResults]
 
   const excludedIds = [...picks.blue, ...picks.red]
     .map((slot) => slot.championId)

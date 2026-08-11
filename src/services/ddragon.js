@@ -9,7 +9,9 @@ export async function fetchLatestVersion() {
 export async function fetchChampions(version) {
   const response = await fetch(`${BASE_URL}/cdn/${version}/data/en_US/champion.json`)
   const { data } = await response.json()
-  return Object.values(data).map(({ id, name, title, tags }) => ({ id, name, title, tags }))
+  return Object.values(data)
+    .filter(({ id }) => !id.startsWith('Jade_'))
+    .map(({ id, name, title, tags }) => ({ id, name, title, tags }))
 }
 
 export function championIconUrl(version, championId) {
