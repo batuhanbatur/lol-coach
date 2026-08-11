@@ -164,7 +164,7 @@
     "severity": "high",
     "timing_note": "Shield must be active at the moment the cast finishes; baiting the cast then shielding denies the whole ult.",
     "tags": ["death-realm", "spell-shield", "ult-denial"],
-    "patch_verified": null
+    "patch_verified": "26.14"
   },
   {
     "id": "morde-r-karthus-r",
@@ -175,7 +175,7 @@
     "severity": "medium",
     "timing_note": null,
     "tags": ["death-realm", "global", "negative-entry"],
-    "patch_verified": null
+    "patch_verified": "26.14"
   },
   {
     "id": "morde-r-kalista-r",
@@ -186,7 +186,7 @@
     "severity": "high",
     "timing_note": "Applies for the full realm duration; strongest against engage comps built around Kalista R.",
     "tags": ["death-realm", "isolation", "ult-denial"],
-    "patch_verified": null
+    "patch_verified": "26.14"
   },
   {
     "id": "morde-r-yasuo-r",
@@ -197,7 +197,7 @@
     "severity": "medium",
     "timing_note": "Reactive play: requires Morde R available and quick hands during Yasuo's engage.",
     "tags": ["death-realm", "ult-interrupt"],
-    "patch_verified": null
+    "patch_verified": "26.14"
   },
   {
     "id": "morde-r-tahm-w",
@@ -208,7 +208,7 @@
     "severity": "medium",
     "timing_note": null,
     "tags": ["death-realm", "negative-entry", "false-confidence"],
-    "patch_verified": null
+    "patch_verified": "26.14"
   }
 ]
 
