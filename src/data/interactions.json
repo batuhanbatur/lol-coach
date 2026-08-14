@@ -220,6 +220,67 @@
     "timing_note": null,
     "tags": ["death-realm", "negative-entry", "false-confidence"],
     "patch_verified": "26.14"
+  },
+  {
+    "id": "nonprojectile-basics-bypass-block",
+    "champions": ["Azir", "Senna", "Thresh", "Velkoz", "Zeri"],
+    "abilities": ["Yasuo W", "Braum E", "Samira W"],
+    "interaction_type": "counters",
+    "description": "These champions' basic attacks always bypass Wind Wall, Unbreakable, and Blade Whirl — their autos aren't classified as projectiles despite being ranged.",
+    "severity": "medium",
+    "tags": ["projectile-block", "basic-attack"],
+    "patch_verified": "26.14"
+  },
+  {
+    "id": "conditional-basics-bypass-block",
+    "champions": ["Aphelios", "Fiddlesticks", "Kayle", "Samira"],
+    "abilities": ["Yasuo W", "Braum E", "Samira W"],
+    "interaction_type": "counters",
+    "description": "Aphelios bypasses all three while using Severum. Fiddlesticks, Kayle (post-Arisen), and Samira herself bypass all three specifically while attacking from melee range.",
+    "severity": "low",
+    "tags": ["projectile-block", "basic-attack"],
+    "patch_verified": "26.14"
+  },
+  {
+    "id": "braum-unbreakable-directional-reduction",
+    "champions": ["Braum"],
+    "abilities": ["Braum E"],
+    "interaction_type": "counters",
+    "description": "Unbreakable's damage reduction applies to any damage from its facing direction, not just true projectiles — including instant-cast direction abilities like Xerath Q or Lux R, which Wind Wall doesn't touch at all.",
+    "severity": "medium",
+    "tags": ["projectile-block", "directional"],
+    "patch_verified": "26.14"
+  },
+  {
+    "id": "braum-unbreakable-blocks-ally-heal",
+    "champions": ["Braum", "Soraka"],
+    "abilities": ["Braum E", "Soraka W"],
+    "interaction_type": "counters",
+    "description": "Unbreakable can intercept an ally's incoming heal — Soraka's Starcall Rejuvenation is explicitly blockable by it if it travels through Braum's shield direction.",
+    "severity": "low",
+    "tags": ["projectile-block", "friendly-fire"],
+    "patch_verified": "26.14"
+  },
+  {
+    "id": "braum-unbreakable-spellshield-double-consume",
+    "champions": ["Braum"],
+    "abilities": ["Braum E"],
+    "interaction_type": "counters",
+    "description": "If Braum also has an item spell shield (Banshee's, Edge of Night), a single blockable spell consumes both the spell shield and Unbreakable's one-time full-negate charge at once, wasting one of the two.",
+    "severity": "low",
+    "tags": ["spell-shield", "itemization"],
+    "patch_verified": "26.14"
+  },
+  {
+    "id": "samira-blade-whirl-spellshield-partial-block",
+    "champions": ["Samira"],
+    "abilities": ["Samira W"],
+    "interaction_type": "counters",
+    "description": "An enemy spell shield blocks only one of Blade Whirl's two slashes, not both.",
+    "severity": "low",
+    "tags": ["spell-shield", "projectile-block"],
+    "patch_verified": "26.14"
   }
 ]
+
 
