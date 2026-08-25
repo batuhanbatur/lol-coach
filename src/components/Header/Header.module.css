@@ -14,6 +14,21 @@
   color: #e6e6e6;
 }
 
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.navLink {
+  font-size: 13px;
+  color: #9a9ea8;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: #e6e6e6;
+}
+
 .patch {
   font-size: 12px;
   color: #6b6f78;
@@ -23,5 +38,13 @@
 @media (max-width: 700px) {
   .header {
     padding: 16px 0 12px;
+  }
+
+  .nav {
+    gap: 12px;
+  }
+
+  .navLink {
+    font-size: 12px;
   }
 }

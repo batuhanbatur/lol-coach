@@ -9,6 +9,7 @@ import Header from './components/Header/Header'
 import PickInput, { ROLES } from './components/PickInput/PickInput'
 import BanRow from './components/BanRow/BanRow'
 import AnalysisPanel from './components/AnalysisPanel/AnalysisPanel'
+import Footer from './components/Footer/Footer'
 import styles from './components/PickInput/PickInput.module.css'
 
 const coveredChampions = buildCoverageSet(interactions)
@@ -83,6 +84,7 @@ function App() {
       <section aria-label="analysis" className={styles.analysisSection}>
         <AnalysisPanel results={results} champions={champions} version={version} />
       </section>
+      <Footer />
     </div>
   )
 }

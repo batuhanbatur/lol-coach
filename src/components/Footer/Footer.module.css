@@ -1,0 +1,53 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 48px;
+  padding: 24px 0 32px;
+  border-top: 1px solid #2a2e37;
+}
+
+.section {
+  flex: 1 1 280px;
+  min-width: 240px;
+}
+
+.heading {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e6e6e6;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px;
+}
+
+.steps {
+  margin: 0;
+  padding-left: 18px;
+  color: #9a9ea8;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.steps li + li {
+  margin-top: 8px;
+}
+
+.stepTitle {
+  color: #e6e6e6;
+  font-weight: 600;
+}
+
+.body {
+  margin: 0;
+  color: #9a9ea8;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .footer {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
