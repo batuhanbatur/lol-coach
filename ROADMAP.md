@@ -47,6 +47,16 @@ v1 scope discipline: nothing moves up a tier without a chat decision.
       loop. v1-cheap variant: GitHub issue template / form link.
 - [ ] Per-card usefulness feedback (thumbs during use, not post-game
       surveys). Needs backend to store.
+- [ ] LCU integration (headline): read live champ select from the
+      League client (picks, bans, player's own slot). Removes all
+      manual input. Supersedes screenshot-OCR idea below.
+- [ ] Pick suggestions: recommend picks based on comp gaps +
+      remaining roles. Must be ban-aware (never suggest a banned
+      champion). Requires bans as input — bans stay out of v1
+      because analysis-only needs them for nothing.
+- [ ] Screenshot ban import (likely superseded by LCU): user crops
+      ban row (cmd+shift+4), vision model extracts champions. Only
+      worth building if LCU integration stalls.
 
 ## Ideas — unranked, undecided
 
