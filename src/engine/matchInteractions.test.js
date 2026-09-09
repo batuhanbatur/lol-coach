@@ -120,10 +120,52 @@ describe('synergy-family types', () => {
   });
 });
 
+describe('team_scope', () => {
+  it('same_team counters entry, both champs on my team → warning', () => {
+    const entry = makeEntry({
+      interaction_type: 'counters',
+      team_scope: 'same_team',
+    });
+    const draft = makeDraft({
+      blue: ['Actor', 'Target'],
+      mySlot: { team: 'blue', index: 0 },
+    });
+    const [result] = analyzeInteractions(draft, [entry]);
+    expect(result.kind).toBe('warning');
+  });
+
+  it('same_team counters entry, both champs on enemy team → no result', () => {
+    const entry = makeEntry({
+      interaction_type: 'counters',
+      team_scope: 'same_team',
+    });
+    const draft = makeDraft({
+      red: ['Actor', 'Target'],
+      mySlot: { team: 'blue', index: 0 },
+    });
+    expect(analyzeInteractions(draft, [entry])).toEqual([]);
+  });
+
+  it('same_team counters entry, champs split across teams → no result', () => {
+    const entry = makeEntry({
+      interaction_type: 'counters',
+      team_scope: 'same_team',
+    });
+    const draft = makeDraft({ blue: ['Actor'], red: ['Target'] });
+    expect(analyzeInteractions(draft, [entry])).toEqual([]);
+  });
+});
+
 describe('activation', () => {
   it('entry with an unpicked champion is inactive', () => {
     const entry = makeEntry();
     const draft = makeDraft({ blue: ['Actor'] }); // Target never picked
+    expect(analyzeInteractions(draft, [entry])).toEqual([]);
+  });
+
+  it('entry whose champions is not exactly a pair is inactive', () => {
+    const entry = makeEntry({ champions: ['Actor', 'Target', 'Third'] });
+    const draft = makeDraft({ blue: ['Actor', 'Target', 'Third'] });
     expect(analyzeInteractions(draft, [entry])).toEqual([]);
   });
 });

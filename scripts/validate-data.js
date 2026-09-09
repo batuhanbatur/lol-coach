@@ -4,6 +4,7 @@
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
+import process from 'node:process'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DATA_PATH = path.join(__dirname, '..', 'src', 'data', 'interactions.json')
@@ -18,6 +19,7 @@ const INTERACTION_TYPES = new Set([
   'no_effect',
 ])
 const SEVERITIES = new Set(['critical', 'high', 'medium', 'low'])
+const TEAM_SCOPES = new Set(['same_team', 'cross_team', 'any'])
 const REQUIRED_FIELDS = [
   'id',
   'champions',
@@ -70,8 +72,11 @@ function validateEntry(entry, index, errors, warnings, seenIds) {
       entry.champions.length !== 2 ||
       !entry.champions.every(isNonEmptyString)
     ) {
+      const found = Array.isArray(entry.champions)
+        ? `array of length ${entry.champions.length}`
+        : `${typeof entry.champions}`
       errors.push(
-        `entry ${id}: champions must be an array of exactly 2 non-empty strings`
+        `entry ${id}: champions must be an array of exactly 2 non-empty strings (found ${found})`
       )
     } else {
       for (const champion of entry.champions) {
@@ -101,6 +106,12 @@ function validateEntry(entry, index, errors, warnings, seenIds) {
   ) {
     errors.push(
       `entry ${id}: severity "${entry.severity}" is not one of ${[...SEVERITIES].join(' | ')}`
+    )
+  }
+
+  if (entry.team_scope !== undefined && !TEAM_SCOPES.has(entry.team_scope)) {
+    errors.push(
+      `entry ${id}: team_scope "${entry.team_scope}" is not one of ${[...TEAM_SCOPES].join(' | ')}`
     )
   }
 
@@ -282,4 +293,12 @@ function main() {
   process.exit(0)
 }
 
-main()
+const invokedDirectly =
+  process.argv[1] &&
+  path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)
+
+if (invokedDirectly) {
+  main()
+}
+
+export { validateEntry }

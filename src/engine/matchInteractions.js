@@ -31,20 +31,51 @@ function buildTeamMap(draft) {
   return teams;
 }
 
+// Default team relationship each interaction_type requires, absent an
+// explicit team_scope on the entry. Types not listed (warning, unknown
+// types) default to "any".
+const IMPLICIT_TEAM_SCOPE = {
+  counters: 'cross_team',
+  no_effect: 'cross_team',
+  synergy: 'same_team',
+  amplifies: 'same_team',
+  enables: 'same_team',
+};
+
 // Derives the perspective-relative kind for one active entry, or null if
-// the entry does not apply to this draft (e.g. synergy split across teams).
+// the entry does not apply to this draft (e.g. synergy split across teams,
+// or a team_scope the draft's team layout doesn't satisfy).
 function deriveKind(entry, champTeams, myTeam) {
+  // Derivation assumes champions is exactly [actor, target]. Anything
+  // else is a malformed entry and does not apply to any draft.
+  if (entry.champions.length !== 2) return null;
+
   const [actor, target] = entry.champions;
   const actorTeam = champTeams.get(actor);
   const targetTeam = target != null ? champTeams.get(target) : undefined;
 
+  // Resolve the required team relationship: an explicit team_scope wins,
+  // otherwise fall back to the per-type default, otherwise "any".
+  const scope =
+    entry.team_scope ?? IMPLICIT_TEAM_SCOPE[entry.interaction_type] ?? 'any';
+
+  // Scope gate — drop the entry when the draft's team layout doesn't
+  // match. "any" imposes no gate.
+  if (scope === 'same_team' && actorTeam !== targetTeam) return null;
+  if (scope === 'cross_team' && actorTeam === targetTeam) return null;
+
   switch (entry.interaction_type) {
     case 'counters':
     case 'no_effect':
-      // Adversarial types: the interaction is only possible between
-      // opposing champions (e.g. Sylas cannot steal an ally's ult).
-      // Same team means it cannot occur in game, so the entry is inactive.
-      if (actorTeam === targetTeam) return null;
+      if (actorTeam === targetTeam) {
+        // Both champions on one team (team_scope allowed it): internal
+        // anti-synergy. Surfaced only for my own team — enemy internal
+        // anti-synergy is not shown (product decision).
+        if (actorTeam !== myTeam) return null;
+        return 'warning';
+      }
+      // Opposing champions — derivation unchanged (e.g. Sylas cannot
+      // steal an ally's ult, so this only reads across teams).
       if (entry.interaction_type === 'counters') {
         return actorTeam === myTeam ? 'advantage' : 'warning';
       }
@@ -57,8 +88,7 @@ function deriveKind(entry, champTeams, myTeam) {
     case 'synergy':
     case 'amplifies':
     case 'enables':
-      // Synergy requires both champions on the same team.
-      if (actorTeam !== targetTeam) return null;
+      // Same-team relationship already enforced by the scope gate.
       return actorTeam === myTeam ? 'advantage' : 'warning';
 
     case 'warning':
