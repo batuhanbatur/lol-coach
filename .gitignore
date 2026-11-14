@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 Champion_*.md
+# Local research corpus (raw wiki text, regenerate with scripts/fetch-wiki-corpus.js)
+research/wiki-corpus/
