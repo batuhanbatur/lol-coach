@@ -26,6 +26,8 @@ Read `CLAUDE.md` first: its data-model and pipeline rules still apply.
 - Batch 1 (projectile block, 10-champion pool): 12 candidates, NOT yet verdicted. See `batch-1-projectile-block-pool.md`.
 - Batch 2 (cross-champion mentions): 65 candidates, verdicted. 60 accepted -> 108 staged entries in `batch-2-accepted.json`, ordered by row number. They pass the validator once stamped and were smoke-tested against the matching engine.
 - Batch 2b (15 candidates from lines recovered by the parser fix, mostly Death Realm): NOT yet verdicted. See `batch-2b-recovered.md`.
+- Batch 3 (48 candidates, projectile blockers second layer, mostly flag-only): NOT yet verdicted. See `batch-3-projectile-second-layer.md`.
+- The original 21 entries were re-verified on 2026-11-16: see `research/reverify-existing-21.md` (2 wrong, 4 with inverted champion order).
 - Not staged from batch 2: #11 (needs clarification), #12, #61, #65 (in-game tests), #16 (accepted as true, excluded by choice).
 
 ## Waiting on Batuhan
@@ -34,7 +36,7 @@ Read `CLAUDE.md` first: its data-model and pipeline rules still apply.
    - #12 Yone E inside Camille R: is the recast disabled, or does recasting end Camille R? The wiki says both.
    - #61 Sylas with a stolen Kalista R: the wiki says it is "only castable with a Black Spear link" and that the spear is purchasable in the shop for 0 gold, so Sylas can probably buy it and bind an ally. Confirm.
    - #65 Does Milio R remove Cassiopeia W's ground, Singed W's ground, and Soraka E's silence? Wiki calls them non-dispellable by "most cleanses"; Milio R is not named.
-3. Verdict batch 1 and batch 2b.
+3. Verdict batch 1, batch 2b and batch 3 (y / n / s).
 4. Re-run `node scripts/fetch-wiki-corpus.js` (parser fix).
 
 ## Known problems found during research (not fixed)
@@ -44,10 +46,9 @@ Read `CLAUDE.md` first: its data-model and pipeline rules still apply.
 - `src/config/patch.js` still says 26.14.
 - `mordekaiser-r-tahmkench-r` (staged) shares its champion and ability pair with the existing `morde-r-tahm-r`. They state different facts; decide whether to merge the text.
 - Mel W: patch 26.22 coverage says her reflect was removed, but the wiki still lists it as a projectile blocker. Any Mel note is suspect.
-- The existing 21 entries have not been re-verified since 26.14.
 
 ## Next research, in order
-1. Re-verify the 21 existing entries against the fresh corpus.
+1. Apply the fixes listed in `reverify-existing-21.md`.
 2. Batch 3 seeds:
    - Jarvan IV R with Vayne E / Poppy E / Nautilus Q. The wiki says each of those "can interact with player-generated terrain" (general rule; Jarvan R is not named). Batuhan suggested this on row 39.
    - #11 Vi R vs Camille R, reworded: a Vi trapped in Camille R who casts R on a target outside keeps charging at the border until the zone ends, hitting others in her path repeatedly.
