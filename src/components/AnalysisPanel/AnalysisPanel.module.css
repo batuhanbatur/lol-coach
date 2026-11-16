@@ -99,6 +99,19 @@
   margin: 0.375rem 0 0;
 }
 
+/* When the interaction does NOT hold. Always visible: a correction to the
+   main claim should never sit behind a hover. */
+.exception {
+  color: #b5b2ad;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  margin: 0.375rem 0 0;
+}
+
+.exceptionLabel {
+  font-weight: 600;
+}
+
 @media (max-width: 700px) {
   .card {
     width: 100%;

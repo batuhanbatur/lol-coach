@@ -115,6 +115,11 @@ function validateEntry(entry, index, errors, warnings, seenIds) {
     )
   }
 
+  // Optional: one sentence on when the interaction does not hold.
+  if (entry.exception !== undefined && !isNonEmptyString(entry.exception)) {
+    errors.push(`entry ${id}: exception, when present, must be a non-empty string`)
+  }
+
   if (!isNonEmptyString(entry.patch_verified)) {
     errors.push(`entry ${id} is unverified and cannot ship`)
   }

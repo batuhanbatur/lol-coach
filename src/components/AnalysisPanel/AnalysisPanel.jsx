@@ -53,6 +53,11 @@ function AnalysisPanel({ results, champions, version }) {
           {entry.timing_note && (
             <p className={styles.timingNote}>{entry.timing_note}</p>
           )}
+          {entry.exception && (
+            <p className={styles.exception}>
+              <span className={styles.exceptionLabel}>Exception:</span> {entry.exception}
+            </p>
+          )}
         </article>
       ))}
     </div>

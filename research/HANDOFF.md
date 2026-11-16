@@ -9,6 +9,7 @@ Read `CLAUDE.md` first: its data-model and pipeline rules still apply.
 - An entry must (1) deviate from what the ability description predicts and (2) change a pick, ban, or how the matchup is played. Start strict.
 - `champions` is `[actor, target]` and uses Data Dragon ids (`Khazix`, `Velkoz`, `MonkeyKing`...), not display names.
 - Descriptions use champion + key ("Yasuo W"), not ability names. Keys come from the wiki roster, never from memory.
+- Optional `exception` field: one sentence on when the interaction does not hold. It renders as an always-visible line on the card (added 2026-11-17).
 - `npm run validate-data` must exit 0 before every commit. Commit messages are subject line only.
 
 ## The pipeline
