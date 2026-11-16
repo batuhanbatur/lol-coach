@@ -1,0 +1,302 @@
+.section {
+  max-width: 792px;
+  margin: 16px auto 0;
+}
+
+/* --- Pool editor --- */
+
+.poolRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9a9ea6;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pool {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.poolChip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 8px 0 2px;
+  background: #1d2027;
+  border: 1px solid #3a404c;
+  border-radius: 6px;
+  color: #e6e6e6;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.poolChip:hover {
+  border-color: #4a4f59;
+}
+
+.poolIcon {
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  display: block;
+}
+
+.poolName {
+  white-space: nowrap;
+}
+
+.removeMark {
+  color: #7d828c;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.poolChip:hover .removeMark {
+  color: #e6e6e6;
+}
+
+.addSlot {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background: #1d2027;
+  border: 1px solid #3a404c;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addSlotActive {
+  width: 160px;
+  justify-content: flex-start;
+  padding: 0 8px;
+}
+
+.addButton {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  color: #7d828c;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.addButton:hover {
+  color: #9a9ea6;
+}
+
+.searchInput {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  color: #e6e6e6;
+  font-size: 13px;
+}
+
+.results {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 180px;
+  z-index: 10;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  background: #22262f;
+  border: 1px solid #2a2e37;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.resultItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 8px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  color: #e6e6e6;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.resultItem:hover {
+  background: #2d3340;
+}
+
+.resultIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.hint {
+  margin: 4px 0 0;
+  text-align: center;
+  color: #9a9ea6;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* --- Ranked suggestions --- */
+
+.suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.suggestion {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 0.75rem 1rem;
+  background: #15181e;
+  border-radius: 4px;
+}
+
+.unavailable {
+  opacity: 0.55;
+}
+
+.rank {
+  width: 16px;
+  flex-shrink: 0;
+  padding-top: 6px;
+  color: #9a9ea6;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.suggestionIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.suggestionBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.suggestionHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.suggestionName {
+  color: #e8e6e3;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.score {
+  color: #9a9ea6;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.reasons {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reason {
+  position: relative;
+  padding-left: 14px;
+  color: #b5b2ad;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.dot {
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* Same severity colors as the analysis cards. */
+.dotAdvantage {
+  background: #46a758;
+}
+
+.dotWarning {
+  background: #d9a13b;
+}
+
+.dotCritical {
+  background: #e5484d;
+}
+
+.dotInfo {
+  background: #4f8f9e;
+}
+
+.noData {
+  margin: 4px 0 0;
+  color: #9a9ea6;
+  font-size: 0.85rem;
+}
+
+.pickButton {
+  flex-shrink: 0;
+  align-self: center;
+  padding: 6px 12px;
+  background: none;
+  border: 1px solid #3a404c;
+  border-radius: 6px;
+  color: #e6e6e6;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.pickButton:hover {
+  border-color: #5b8cff;
+  background: #232a3b;
+}
+
+@media (max-width: 700px) {
+  .poolRow {
+    justify-content: flex-start;
+  }
+
+  .hint {
+    text-align: left;
+  }
+}
