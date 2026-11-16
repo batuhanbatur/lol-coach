@@ -213,7 +213,13 @@ function PickInput({ champions, version, picks, onPicksChange, mySlot, onMySlotC
   function renderTeam(team, label) {
     return (
       <div className={styles.team}>
-        <h2 className={styles.teamLabel}>{label}</h2>
+        <h2
+          className={`${styles.teamLabel} ${
+            team === 'blue' ? styles.teamLabelBlue : styles.teamLabelRed
+          }`}
+        >
+          {label}
+        </h2>
         <div className={styles.slots}>
           {picks[team].map((slot, index) => renderSlot(team, index, slot))}
         </div>
