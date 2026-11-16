@@ -119,7 +119,7 @@
     "range": "short",
     "scaling": "late"
   },
-  "BelVeth": {
+  "Belveth": {
     "cc": "none",
     "damageType": "physical",
     "durability": "durable",
@@ -183,7 +183,7 @@
     "range": "short",
     "scaling": "late"
   },
-  "ChoGath": {
+  "Chogath": {
     "cc": "hard",
     "damageType": "magic",
     "durability": "tank",
@@ -447,7 +447,7 @@
     "range": "melee",
     "scaling": "mid"
   },
-  "KaiSa": {
+  "Kaisa": {
     "cc": "none",
     "damageType": "mixed",
     "durability": "squishy",
@@ -519,7 +519,7 @@
     "range": "short",
     "scaling": "mid"
   },
-  "KhaZix": {
+  "Khazix": {
     "cc": "soft",
     "damageType": "physical",
     "durability": "squishy",
@@ -551,7 +551,7 @@
     "range": "long",
     "scaling": "late"
   },
-  "LeBlanc": {
+  "Leblanc": {
     "cc": "hard",
     "damageType": "magic",
     "durability": "squishy",
@@ -759,7 +759,7 @@
     "range": "melee",
     "scaling": "mid"
   },
-  "NunuWillump": {
+  "Nunu": {
     "cc": "hard",
     "damageType": "magic",
     "durability": "tank",
@@ -863,7 +863,7 @@
     "range": "melee",
     "scaling": "mid"
   },
-  "RenataGlasc": {
+  "Renata": {
     "cc": "hard",
     "damageType": "magic",
     "durability": "squishy",
@@ -1183,7 +1183,7 @@
     "range": "long",
     "scaling": "late"
   },
-  "VelKoz": {
+  "Velkoz": {
     "cc": "hard",
     "damageType": "magic",
     "durability": "squishy",
@@ -1247,7 +1247,7 @@
     "range": "melee",
     "scaling": "early"
   },
-  "Wukong": {
+  "MonkeyKing": {
     "cc": "hard",
     "damageType": "physical",
     "durability": "durable",
