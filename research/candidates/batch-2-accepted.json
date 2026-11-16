@@ -1,0 +1,2094 @@
+[
+  {
+    "id": "mordekaiser-r-pantheon-r",
+    "champions": [
+      "Mordekaiser",
+      "Pantheon"
+    ],
+    "abilities": [
+      "Mordekaiser R",
+      "Pantheon R"
+    ],
+    "interaction_type": "counters",
+    "description": "Pantheon R's first channel is interrupted if Pantheon enters or leaves the Death Realm — Mordekaiser R on a channeling Pantheon cancels the drop.",
+    "severity": "high",
+    "tags": [
+      "death-realm",
+      "ult-interrupt"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "mordekaiser-r-kayn-r",
+    "champions": [
+      "Mordekaiser",
+      "Kayn"
+    ],
+    "abilities": [
+      "Mordekaiser R",
+      "Kayn R"
+    ],
+    "interaction_type": "counters",
+    "description": "If Kayn's target is sent to the Death Realm while Kayn is attached, Kayn R is cancelled and Kayn pops out at the target's location.",
+    "severity": "high",
+    "tags": [
+      "death-realm",
+      "ult-interrupt"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "mordekaiser-r-kayn-r-same-team",
+    "champions": [
+      "Mordekaiser",
+      "Kayn"
+    ],
+    "abilities": [
+      "Mordekaiser R",
+      "Kayn R"
+    ],
+    "interaction_type": "counters",
+    "description": "Same team: Mordekaiser R on the enemy Kayn is attached to cancels Kayn R — the two ults cannot be stacked on one target.",
+    "severity": "high",
+    "tags": [
+      "death-realm",
+      "ult-interrupt",
+      "same-team"
+    ],
+    "patch_verified": null,
+    "team_scope": "same_team"
+  },
+  {
+    "id": "mordekaiser-r-briar-r",
+    "champions": [
+      "Mordekaiser",
+      "Briar"
+    ],
+    "abilities": [
+      "Mordekaiser R",
+      "Briar R"
+    ],
+    "interaction_type": "counters",
+    "description": "Briar loses her R frenzy if she enters the Death Realm without her target. If her target is taken instead, the mark is removed but she keeps the frenzy.",
+    "severity": "medium",
+    "tags": [
+      "death-realm",
+      "ult-denial"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "mordekaiser-r-tahmkench-r",
+    "champions": [
+      "Mordekaiser",
+      "TahmKench"
+    ],
+    "abilities": [
+      "Mordekaiser R",
+      "Tahm Kench R"
+    ],
+    "interaction_type": "counters",
+    "description": "A Death Realm transition removes Tahm Kench R's suppression — an enemy he has swallowed is released.",
+    "severity": "medium",
+    "tags": [
+      "death-realm",
+      "suppression"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "mordekaiser-r-yone-e",
+    "champions": [
+      "Mordekaiser",
+      "Yone"
+    ],
+    "abilities": [
+      "Mordekaiser R",
+      "Yone E"
+    ],
+    "interaction_type": "counters",
+    "description": "Yone E's recast is disabled inside the Death Realm and deferred until the realm ends — he cannot snap back out.",
+    "severity": "medium",
+    "tags": [
+      "death-realm",
+      "escape-denial"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "mordekaiser-r-taric-w",
+    "champions": [
+      "Mordekaiser",
+      "Taric"
+    ],
+    "abilities": [
+      "Mordekaiser R",
+      "Taric W"
+    ],
+    "interaction_type": "counters",
+    "description": "Taric W's link effects are disabled while Taric and his partner are in different realms. The tether itself does not break and resumes afterwards.",
+    "severity": "low",
+    "tags": [
+      "death-realm",
+      "tether"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "urgot-r-camille-r",
+    "champions": [
+      "Urgot",
+      "Camille"
+    ],
+    "abilities": [
+      "Urgot R",
+      "Camille R"
+    ],
+    "interaction_type": "counters",
+    "description": "Same team: Camille R ends immediately if her target is dragged by Urgot R's recast.",
+    "severity": "high",
+    "tags": [
+      "hextech-ultimatum",
+      "same-team",
+      "ult-interrupt"
+    ],
+    "patch_verified": null,
+    "team_scope": "same_team"
+  },
+  {
+    "id": "camille-r-sett-r",
+    "champions": [
+      "Camille",
+      "Sett"
+    ],
+    "abilities": [
+      "Camille R",
+      "Sett R"
+    ],
+    "interaction_type": "counters",
+    "description": "Sett R cannot carry a target out of Camille R — the dash ends at the border.",
+    "severity": "medium",
+    "tags": [
+      "hextech-ultimatum",
+      "zone-exclusion"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "kayn-r-camille-r",
+    "champions": [
+      "Kayn",
+      "Camille"
+    ],
+    "abilities": [
+      "Kayn R",
+      "Camille R"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Kayn R lets him attach to a target outside Camille R, but it does not get him out — he is displaced back inside when he detaches.",
+    "severity": "medium",
+    "tags": [
+      "hextech-ultimatum",
+      "negative-entry",
+      "false-confidence"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "tristana-w-camille-r",
+    "champions": [
+      "Tristana",
+      "Camille"
+    ],
+    "abilities": [
+      "Tristana W",
+      "Camille R"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Tristana W does not get her out of Camille R, though it still applies its damage and slow.",
+    "severity": "low",
+    "tags": [
+      "hextech-ultimatum",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "kalista-r-warwick-r",
+    "champions": [
+      "Kalista",
+      "Warwick"
+    ],
+    "abilities": [
+      "Kalista R",
+      "Warwick R"
+    ],
+    "interaction_type": "counters",
+    "description": "Warwick R's channel is interrupted when its target is pulled by Kalista R — Kalista can save her Oathsworn from the suppression.",
+    "severity": "high",
+    "tags": [
+      "fates-call",
+      "ult-interrupt",
+      "suppression"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "kalista-r-tahmkench-r",
+    "champions": [
+      "Kalista",
+      "TahmKench"
+    ],
+    "abilities": [
+      "Kalista R",
+      "Tahm Kench R"
+    ],
+    "interaction_type": "counters",
+    "description": "A target swallowed by Tahm Kench R is automatically regurgitated if Kalista R pulls them.",
+    "severity": "high",
+    "tags": [
+      "fates-call",
+      "suppression"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "twistedfate-r-kalista-r",
+    "champions": [
+      "TwistedFate",
+      "Kalista"
+    ],
+    "abilities": [
+      "Twisted Fate R",
+      "Kalista R"
+    ],
+    "interaction_type": "counters",
+    "description": "Same team: Kalista R cannot be cast while her Oathsworn is channeling Twisted Fate R.",
+    "severity": "medium",
+    "tags": [
+      "fates-call",
+      "same-team",
+      "ult-denial"
+    ],
+    "patch_verified": null,
+    "team_scope": "same_team"
+  },
+  {
+    "id": "pantheon-r-kalista-r",
+    "champions": [
+      "Pantheon",
+      "Kalista"
+    ],
+    "abilities": [
+      "Pantheon R",
+      "Kalista R"
+    ],
+    "interaction_type": "counters",
+    "description": "Same team: Kalista R cannot be cast while her Oathsworn is channeling Pantheon R.",
+    "severity": "medium",
+    "tags": [
+      "fates-call",
+      "same-team",
+      "ult-denial"
+    ],
+    "patch_verified": null,
+    "team_scope": "same_team"
+  },
+  {
+    "id": "galio-r-kalista-r",
+    "champions": [
+      "Galio",
+      "Kalista"
+    ],
+    "abilities": [
+      "Galio R",
+      "Kalista R"
+    ],
+    "interaction_type": "counters",
+    "description": "Same team: Kalista R cannot be cast while her Oathsworn is channeling Galio R.",
+    "severity": "medium",
+    "tags": [
+      "fates-call",
+      "same-team",
+      "ult-denial"
+    ],
+    "patch_verified": null,
+    "team_scope": "same_team"
+  },
+  {
+    "id": "shen-r-kalista-r",
+    "champions": [
+      "Shen",
+      "Kalista"
+    ],
+    "abilities": [
+      "Shen R",
+      "Kalista R"
+    ],
+    "interaction_type": "counters",
+    "description": "Same team: Kalista R cannot be cast while her Oathsworn is channeling Shen R.",
+    "severity": "medium",
+    "tags": [
+      "fates-call",
+      "same-team",
+      "ult-denial"
+    ],
+    "patch_verified": null,
+    "team_scope": "same_team"
+  },
+  {
+    "id": "tryndamere-r-urgot-r",
+    "champions": [
+      "Tryndamere",
+      "Urgot"
+    ],
+    "abilities": [
+      "Tryndamere R",
+      "Urgot R"
+    ],
+    "interaction_type": "counters",
+    "description": "Urgot R's execute does not kill Tryndamere during Tryndamere R — it only drops him to 1 health.",
+    "severity": "high",
+    "tags": [
+      "execute",
+      "ult-denial"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "fiora-w-pyke-r",
+    "champions": [
+      "Fiora",
+      "Pyke"
+    ],
+    "abilities": [
+      "Fiora W",
+      "Pyke R"
+    ],
+    "interaction_type": "counters",
+    "description": "Fiora cannot be executed by Pyke R during Fiora W.",
+    "severity": "high",
+    "tags": [
+      "execute",
+      "parry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "fiora-w-kayn-r",
+    "champions": [
+      "Fiora",
+      "Kayn"
+    ],
+    "abilities": [
+      "Fiora W",
+      "Kayn R"
+    ],
+    "interaction_type": "counters",
+    "description": "Kayn R cast on Fiora during Fiora W fails entirely and goes on full cooldown.",
+    "severity": "high",
+    "tags": [
+      "parry",
+      "ult-denial"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "braum-e-urgot-r",
+    "champions": [
+      "Braum",
+      "Urgot"
+    ],
+    "abilities": [
+      "Braum E",
+      "Urgot R"
+    ],
+    "interaction_type": "counters",
+    "description": "If Braum E intercepts the chains of Urgot R's recast and Braum is not the target, the chains are destroyed. If Braum is the target, he is still executed.",
+    "severity": "medium",
+    "tags": [
+      "projectile-block",
+      "execute"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "kayn-r-sion-p",
+    "champions": [
+      "Kayn",
+      "Sion"
+    ],
+    "abilities": [
+      "Kayn R",
+      "Sion P"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Kayn R cannot be cast on Sion during Sion P's zombie state.",
+    "severity": "low",
+    "tags": [
+      "zombie",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "fiora-r-sion-p",
+    "champions": [
+      "Fiora",
+      "Sion"
+    ],
+    "abilities": [
+      "Fiora R",
+      "Sion P"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Fiora R cannot be cast on Sion during Sion P's zombie state.",
+    "severity": "low",
+    "tags": [
+      "zombie",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "morgana-e-illaoi-e",
+    "champions": [
+      "Morgana",
+      "Illaoi"
+    ],
+    "abilities": [
+      "Morgana E",
+      "Illaoi E"
+    ],
+    "interaction_type": "counters",
+    "description": "Morgana E blocks Illaoi E's spirit pull even though the pull is not a crowd-control effect.",
+    "severity": "high",
+    "tags": [
+      "cc-immunity",
+      "engage-denial"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "morgana-e-fizz-r",
+    "champions": [
+      "Morgana",
+      "Fizz"
+    ],
+    "abilities": [
+      "Morgana E",
+      "Fizz R"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Morgana E does not stop Fizz R from attaching.",
+    "severity": "medium",
+    "tags": [
+      "cc-immunity",
+      "negative-entry",
+      "false-confidence"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "morgana-e-camille-r",
+    "champions": [
+      "Morgana",
+      "Camille"
+    ],
+    "abilities": [
+      "Morgana E",
+      "Camille R"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Morgana E does not prevent Camille R's tether.",
+    "severity": "medium",
+    "tags": [
+      "cc-immunity",
+      "negative-entry",
+      "hextech-ultimatum"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "morgana-e-twistedfate-r",
+    "champions": [
+      "Morgana",
+      "TwistedFate"
+    ],
+    "abilities": [
+      "Morgana E",
+      "Twisted Fate R"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Morgana E does not prevent Twisted Fate R's reveal.",
+    "severity": "medium",
+    "tags": [
+      "cc-immunity",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "malzahar-p-fizz-r",
+    "champions": [
+      "Malzahar",
+      "Fizz"
+    ],
+    "abilities": [
+      "Malzahar P",
+      "Fizz R"
+    ],
+    "interaction_type": "counters",
+    "description": "Fizz R's lure will not attach to Malzahar while Malzahar P is up (the passive is consumed).",
+    "severity": "medium",
+    "tags": [
+      "spell-shield",
+      "ult-denial"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "malzahar-p-zoe-e",
+    "champions": [
+      "Malzahar",
+      "Zoe"
+    ],
+    "abilities": [
+      "Malzahar P",
+      "Zoe E"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Malzahar P does not prevent drowsy from Zoe E's trap.",
+    "severity": "low",
+    "tags": [
+      "spell-shield",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "olaf-r-thresh-q",
+    "champions": [
+      "Olaf",
+      "Thresh"
+    ],
+    "abilities": [
+      "Olaf R",
+      "Thresh Q"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Olaf R stops Thresh Q's stun, but the hook still marks him and Thresh can still recast to fly in.",
+    "severity": "medium",
+    "tags": [
+      "cc-immunity",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "sivir-e-fizz-r",
+    "champions": [
+      "Sivir",
+      "Fizz"
+    ],
+    "abilities": [
+      "Sivir E",
+      "Fizz R"
+    ],
+    "interaction_type": "counters",
+    "description": "Sivir E still blocks Fizz R's eruption even after the lure has already attached to her.",
+    "severity": "medium",
+    "tags": [
+      "spell-shield",
+      "ult-denial"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "sivir-e-zilean-q",
+    "champions": [
+      "Sivir",
+      "Zilean"
+    ],
+    "abilities": [
+      "Sivir E",
+      "Zilean Q"
+    ],
+    "interaction_type": "counters",
+    "description": "Sivir E still blocks Zilean Q's detonation even after the bomb has already attached to her.",
+    "severity": "medium",
+    "tags": [
+      "spell-shield"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "poppy-w-malphite-r",
+    "champions": [
+      "Poppy",
+      "Malphite"
+    ],
+    "abilities": [
+      "Poppy W",
+      "Malphite R"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Poppy W does not stop Malphite R.",
+    "severity": "high",
+    "tags": [
+      "dash-block",
+      "negative-entry",
+      "false-confidence"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "poppy-w-zed-r",
+    "champions": [
+      "Poppy",
+      "Zed"
+    ],
+    "abilities": [
+      "Poppy W",
+      "Zed R"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Poppy W does not stop Zed R.",
+    "severity": "high",
+    "tags": [
+      "dash-block",
+      "negative-entry",
+      "false-confidence"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "poppy-w-volibear-r",
+    "champions": [
+      "Poppy",
+      "Volibear"
+    ],
+    "abilities": [
+      "Poppy W",
+      "Volibear R"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Poppy W does not stop Volibear R.",
+    "severity": "high",
+    "tags": [
+      "dash-block",
+      "negative-entry",
+      "false-confidence"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "xinzhao-r-zed-r",
+    "champions": [
+      "XinZhao",
+      "Zed"
+    ],
+    "abilities": [
+      "Xin Zhao R",
+      "Zed R"
+    ],
+    "interaction_type": "counters",
+    "description": "Zed R's delayed damage does not hit Xin Zhao if Zed is outside the Xin Zhao R circle when it applies.",
+    "severity": "medium",
+    "tags": [
+      "zone-exclusion",
+      "delayed-damage"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "xinzhao-r-tristana-e",
+    "champions": [
+      "XinZhao",
+      "Tristana"
+    ],
+    "abilities": [
+      "Xin Zhao R",
+      "Tristana E"
+    ],
+    "interaction_type": "counters",
+    "description": "Tristana E's delayed damage does not hit Xin Zhao if Tristana is outside the Xin Zhao R circle when it applies.",
+    "severity": "medium",
+    "tags": [
+      "zone-exclusion",
+      "delayed-damage"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "xinzhao-r-vladimir-r",
+    "champions": [
+      "XinZhao",
+      "Vladimir"
+    ],
+    "abilities": [
+      "Xin Zhao R",
+      "Vladimir R"
+    ],
+    "interaction_type": "counters",
+    "description": "Vladimir R's delayed damage does not hit Xin Zhao if Vladimir is outside the Xin Zhao R circle when it applies.",
+    "severity": "medium",
+    "tags": [
+      "zone-exclusion",
+      "delayed-damage"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "urgot-e-warwick-r",
+    "champions": [
+      "Urgot",
+      "Warwick"
+    ],
+    "abilities": [
+      "Urgot E",
+      "Warwick R"
+    ],
+    "interaction_type": "counters",
+    "description": "Warwick is not immune to Urgot E during his R suppression — it can break the channel.",
+    "severity": "medium",
+    "tags": [
+      "suppression",
+      "ult-interrupt"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "rell-w-warwick-r",
+    "champions": [
+      "Rell",
+      "Warwick"
+    ],
+    "abilities": [
+      "Rell W",
+      "Warwick R"
+    ],
+    "interaction_type": "counters",
+    "description": "Warwick is not immune to Rell W during his R suppression — it can break the channel.",
+    "severity": "medium",
+    "tags": [
+      "suppression",
+      "ult-interrupt"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "nocturne-r-twistedfate-r",
+    "champions": [
+      "Nocturne",
+      "TwistedFate"
+    ],
+    "abilities": [
+      "Nocturne R",
+      "Twisted Fate R"
+    ],
+    "interaction_type": "counters",
+    "description": "Nocturne R's nearsight overrides Twisted Fate R's reveal regardless of which was cast first.",
+    "severity": "medium",
+    "tags": [
+      "vision",
+      "ult-denial"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "morgana-e-evelynn-w",
+    "champions": [
+      "Morgana",
+      "Evelynn"
+    ],
+    "abilities": [
+      "Morgana E",
+      "Evelynn W"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Morgana E resists Evelynn W's charm, but the magic resistance shred still applies.",
+    "severity": "low",
+    "tags": [
+      "cc-immunity",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "jax-e-ezreal-q",
+    "champions": [
+      "Jax",
+      "Ezreal"
+    ],
+    "abilities": [
+      "Jax E",
+      "Ezreal Q"
+    ],
+    "interaction_type": "counters",
+    "description": "Jax E dodges Ezreal Q because it applies on-hit effects.",
+    "severity": "medium",
+    "tags": [
+      "on-hit",
+      "dodge"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "jax-e-gangplank-q",
+    "champions": [
+      "Jax",
+      "Gangplank"
+    ],
+    "abilities": [
+      "Jax E",
+      "Gangplank Q"
+    ],
+    "interaction_type": "counters",
+    "description": "Jax E dodges Gangplank Q because it applies on-hit effects.",
+    "severity": "medium",
+    "tags": [
+      "on-hit",
+      "dodge"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "teemo-q-ezreal-q",
+    "champions": [
+      "Teemo",
+      "Ezreal"
+    ],
+    "abilities": [
+      "Teemo Q",
+      "Ezreal Q"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Teemo Q's blind does not make Ezreal Q miss.",
+    "severity": "medium",
+    "tags": [
+      "on-hit",
+      "blind",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "teemo-q-gangplank-q",
+    "champions": [
+      "Teemo",
+      "Gangplank"
+    ],
+    "abilities": [
+      "Teemo Q",
+      "Gangplank Q"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Teemo Q's blind does not make Gangplank Q miss.",
+    "severity": "medium",
+    "tags": [
+      "on-hit",
+      "blind",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "shen-w-ezreal-q",
+    "champions": [
+      "Shen",
+      "Ezreal"
+    ],
+    "abilities": [
+      "Shen W",
+      "Ezreal Q"
+    ],
+    "interaction_type": "counters",
+    "description": "Shen W blocks Ezreal Q, not just basic attacks.",
+    "severity": "medium",
+    "tags": [
+      "on-hit",
+      "dodge"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "shen-w-yasuo-q",
+    "champions": [
+      "Shen",
+      "Yasuo"
+    ],
+    "abilities": [
+      "Shen W",
+      "Yasuo Q"
+    ],
+    "interaction_type": "counters",
+    "description": "Shen W blocks Yasuo Q, not just basic attacks.",
+    "severity": "medium",
+    "tags": [
+      "on-hit",
+      "dodge"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "shen-w-fiora-q",
+    "champions": [
+      "Shen",
+      "Fiora"
+    ],
+    "abilities": [
+      "Shen W",
+      "Fiora Q"
+    ],
+    "interaction_type": "counters",
+    "description": "Shen W blocks Fiora Q, not just basic attacks.",
+    "severity": "medium",
+    "tags": [
+      "on-hit",
+      "dodge"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "jax-e-masteryi-q",
+    "champions": [
+      "Jax",
+      "MasterYi"
+    ],
+    "abilities": [
+      "Jax E",
+      "Master Yi Q"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Jax E does not dodge Master Yi Q itself, only the on-hit damage it carries.",
+    "severity": "low",
+    "tags": [
+      "on-hit",
+      "dodge",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "jax-e-senna-q",
+    "champions": [
+      "Jax",
+      "Senna"
+    ],
+    "abilities": [
+      "Jax E",
+      "Senna Q"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Jax E does not dodge Senna Q itself, only the on-hit damage it carries.",
+    "severity": "low",
+    "tags": [
+      "on-hit",
+      "dodge",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "amumu-e-ashe-q",
+    "champions": [
+      "Amumu",
+      "Ashe"
+    ],
+    "abilities": [
+      "Amumu E",
+      "Ashe Q"
+    ],
+    "interaction_type": "counters",
+    "description": "Amumu E's flat damage reduction applies to every arrow of Ashe Q, making it far more effective than against normal attacks.",
+    "severity": "medium",
+    "tags": [
+      "damage-reduction",
+      "multi-hit"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "amumu-e-zeri-q",
+    "champions": [
+      "Amumu",
+      "Zeri"
+    ],
+    "abilities": [
+      "Amumu E",
+      "Zeri Q"
+    ],
+    "interaction_type": "counters",
+    "description": "Amumu E's flat damage reduction applies to each of the 7 damage instances of Zeri Q.",
+    "severity": "medium",
+    "tags": [
+      "damage-reduction",
+      "multi-hit"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "fizz-p-ashe-q",
+    "champions": [
+      "Fizz",
+      "Ashe"
+    ],
+    "abilities": [
+      "Fizz P",
+      "Ashe Q"
+    ],
+    "interaction_type": "counters",
+    "description": "Fizz P's flat damage reduction applies to every arrow of Ashe Q, making it far more effective than against normal attacks.",
+    "severity": "medium",
+    "tags": [
+      "damage-reduction",
+      "multi-hit"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "fizz-p-zeri-q",
+    "champions": [
+      "Fizz",
+      "Zeri"
+    ],
+    "abilities": [
+      "Fizz P",
+      "Zeri Q"
+    ],
+    "interaction_type": "counters",
+    "description": "Fizz P's flat damage reduction applies to each of the 7 damage instances of Zeri Q.",
+    "severity": "medium",
+    "tags": [
+      "damage-reduction",
+      "multi-hit"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "leona-w-ashe-q",
+    "champions": [
+      "Leona",
+      "Ashe"
+    ],
+    "abilities": [
+      "Leona W",
+      "Ashe Q"
+    ],
+    "interaction_type": "counters",
+    "description": "Leona W's flat damage reduction applies to every arrow of Ashe Q, making it far more effective than against normal attacks.",
+    "severity": "medium",
+    "tags": [
+      "damage-reduction",
+      "multi-hit"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "leona-w-zeri-q",
+    "champions": [
+      "Leona",
+      "Zeri"
+    ],
+    "abilities": [
+      "Leona W",
+      "Zeri Q"
+    ],
+    "interaction_type": "counters",
+    "description": "Leona W's flat damage reduction applies to each of the 7 damage instances of Zeri Q.",
+    "severity": "medium",
+    "tags": [
+      "damage-reduction",
+      "multi-hit"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "azir-r-vayne-e",
+    "champions": [
+      "Azir",
+      "Vayne"
+    ],
+    "abilities": [
+      "Azir R",
+      "Vayne E"
+    ],
+    "interaction_type": "synergy",
+    "description": "Azir R's wall counts as terrain for Vayne E against enemies.",
+    "severity": "high",
+    "tags": [
+      "terrain",
+      "combo"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "azir-r-poppy-e",
+    "champions": [
+      "Azir",
+      "Poppy"
+    ],
+    "abilities": [
+      "Azir R",
+      "Poppy E"
+    ],
+    "interaction_type": "synergy",
+    "description": "Azir R's wall counts as terrain for Poppy E against enemies.",
+    "severity": "high",
+    "tags": [
+      "terrain",
+      "combo"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "azir-r-nautilus-q",
+    "champions": [
+      "Azir",
+      "Nautilus"
+    ],
+    "abilities": [
+      "Azir R",
+      "Nautilus Q"
+    ],
+    "interaction_type": "synergy",
+    "description": "Azir R's wall counts as terrain for Nautilus Q against enemies.",
+    "severity": "high",
+    "tags": [
+      "terrain",
+      "combo"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "nami-q-yasuo-r",
+    "champions": [
+      "Nami",
+      "Yasuo"
+    ],
+    "abilities": [
+      "Nami Q",
+      "Yasuo R"
+    ],
+    "interaction_type": "enables",
+    "description": "Nami Q's bubble counts as airborne for Yasuo R even though it is a stun.",
+    "severity": "high",
+    "tags": [
+      "airborne",
+      "combo"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "taliyah-r-yasuo-r",
+    "champions": [
+      "Taliyah",
+      "Yasuo"
+    ],
+    "abilities": [
+      "Taliyah R",
+      "Yasuo R"
+    ],
+    "interaction_type": "enables",
+    "description": "Enemies displaced by Taliyah R count as airborne for Yasuo R.",
+    "severity": "medium",
+    "tags": [
+      "airborne",
+      "terrain",
+      "combo"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "trundle-e-yasuo-r",
+    "champions": [
+      "Trundle",
+      "Yasuo"
+    ],
+    "abilities": [
+      "Trundle E",
+      "Yasuo R"
+    ],
+    "interaction_type": "enables",
+    "description": "Enemies displaced by Trundle E count as airborne for Yasuo R.",
+    "severity": "medium",
+    "tags": [
+      "airborne",
+      "terrain",
+      "combo"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "anivia-w-qiyana-r",
+    "champions": [
+      "Anivia",
+      "Qiyana"
+    ],
+    "abilities": [
+      "Anivia W",
+      "Qiyana R"
+    ],
+    "interaction_type": "amplifies",
+    "description": "Anivia W touching map terrain is treated as one piece with it, so Qiyana R's shockwave wraps along it.",
+    "severity": "medium",
+    "tags": [
+      "terrain",
+      "combo"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "taliyah-r-qiyana-r",
+    "champions": [
+      "Taliyah",
+      "Qiyana"
+    ],
+    "abilities": [
+      "Taliyah R",
+      "Qiyana R"
+    ],
+    "interaction_type": "amplifies",
+    "description": "Taliyah R touching map terrain is treated as one piece with it, so Qiyana R's shockwave wraps along it.",
+    "severity": "medium",
+    "tags": [
+      "terrain",
+      "combo"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "trundle-e-qiyana-r",
+    "champions": [
+      "Trundle",
+      "Qiyana"
+    ],
+    "abilities": [
+      "Trundle E",
+      "Qiyana R"
+    ],
+    "interaction_type": "amplifies",
+    "description": "Trundle E touching map terrain is treated as one piece with it, so Qiyana R's shockwave wraps along it.",
+    "severity": "medium",
+    "tags": [
+      "terrain",
+      "combo"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "thresh-w-lucian-r",
+    "champions": [
+      "Thresh",
+      "Lucian"
+    ],
+    "abilities": [
+      "Thresh W",
+      "Lucian R"
+    ],
+    "interaction_type": "synergy",
+    "description": "Lucian can take Thresh W mid-channel without interrupting Lucian R.",
+    "severity": "low",
+    "tags": [
+      "channel",
+      "combo"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "thresh-w-xerath-r",
+    "champions": [
+      "Thresh",
+      "Xerath"
+    ],
+    "abilities": [
+      "Thresh W",
+      "Xerath R"
+    ],
+    "interaction_type": "synergy",
+    "description": "Xerath can take Thresh W mid-channel without interrupting Xerath R.",
+    "severity": "low",
+    "tags": [
+      "channel",
+      "combo"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "tahmkench-r-anivia-r",
+    "champions": [
+      "TahmKench",
+      "Anivia"
+    ],
+    "abilities": [
+      "Tahm Kench R",
+      "Anivia R"
+    ],
+    "interaction_type": "counters",
+    "description": "Same team: Tahm Kench R on an allied Anivia interrupts Anivia R.",
+    "severity": "medium",
+    "tags": [
+      "same-team",
+      "ult-interrupt",
+      "friendly-fire"
+    ],
+    "patch_verified": null,
+    "team_scope": "same_team"
+  },
+  {
+    "id": "ryze-r-caitlyn-r",
+    "champions": [
+      "Ryze",
+      "Caitlyn"
+    ],
+    "abilities": [
+      "Ryze R",
+      "Caitlyn R"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Same team: an ally channeling Caitlyn R is not teleported by Ryze R.",
+    "severity": "low",
+    "tags": [
+      "same-team",
+      "negative-entry",
+      "channel"
+    ],
+    "patch_verified": null,
+    "team_scope": "same_team"
+  },
+  {
+    "id": "ryze-r-galio-r",
+    "champions": [
+      "Ryze",
+      "Galio"
+    ],
+    "abilities": [
+      "Ryze R",
+      "Galio R"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Same team: an ally channeling Galio R is not teleported by Ryze R.",
+    "severity": "low",
+    "tags": [
+      "same-team",
+      "negative-entry",
+      "channel"
+    ],
+    "patch_verified": null,
+    "team_scope": "same_team"
+  },
+  {
+    "id": "ryze-r-jhin-r",
+    "champions": [
+      "Ryze",
+      "Jhin"
+    ],
+    "abilities": [
+      "Ryze R",
+      "Jhin R"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Same team: an ally channeling Jhin R is not teleported by Ryze R.",
+    "severity": "low",
+    "tags": [
+      "same-team",
+      "negative-entry",
+      "channel"
+    ],
+    "patch_verified": null,
+    "team_scope": "same_team"
+  },
+  {
+    "id": "ryze-r-xerath-r",
+    "champions": [
+      "Ryze",
+      "Xerath"
+    ],
+    "abilities": [
+      "Ryze R",
+      "Xerath R"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Same team: an ally channeling Xerath R is not teleported by Ryze R.",
+    "severity": "low",
+    "tags": [
+      "same-team",
+      "negative-entry",
+      "channel"
+    ],
+    "patch_verified": null,
+    "team_scope": "same_team"
+  },
+  {
+    "id": "illaoi-p-khazix-q",
+    "champions": [
+      "Illaoi",
+      "Khazix"
+    ],
+    "abilities": [
+      "Illaoi P",
+      "Kha'Zix Q"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Units from Illaoi P do not count as allies of the target, so they do not break Isolation for Kha'Zix Q.",
+    "severity": "medium",
+    "tags": [
+      "isolation",
+      "negative-entry",
+      "false-confidence"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "gangplank-e-khazix-q",
+    "champions": [
+      "Gangplank",
+      "Khazix"
+    ],
+    "abilities": [
+      "Gangplank E",
+      "Kha'Zix Q"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Units from Gangplank E do not count as allies of the target, so they do not break Isolation for Kha'Zix Q.",
+    "severity": "medium",
+    "tags": [
+      "isolation",
+      "negative-entry",
+      "false-confidence"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "teemo-r-khazix-q",
+    "champions": [
+      "Teemo",
+      "Khazix"
+    ],
+    "abilities": [
+      "Teemo R",
+      "Kha'Zix Q"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Units from Teemo R do not count as allies of the target, so they do not break Isolation for Kha'Zix Q.",
+    "severity": "medium",
+    "tags": [
+      "isolation",
+      "negative-entry",
+      "false-confidence"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "yorick-w-khazix-q",
+    "champions": [
+      "Yorick",
+      "Khazix"
+    ],
+    "abilities": [
+      "Yorick W",
+      "Kha'Zix Q"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Units from Yorick W do not count as allies of the target, so they do not break Isolation for Kha'Zix Q.",
+    "severity": "medium",
+    "tags": [
+      "isolation",
+      "negative-entry",
+      "false-confidence"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "jhin-e-khazix-q",
+    "champions": [
+      "Jhin",
+      "Khazix"
+    ],
+    "abilities": [
+      "Jhin E",
+      "Kha'Zix Q"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Units from Jhin E do not count as allies of the target, so they do not break Isolation for Kha'Zix Q.",
+    "severity": "medium",
+    "tags": [
+      "isolation",
+      "negative-entry",
+      "false-confidence"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "nidalee-w-khazix-q",
+    "champions": [
+      "Nidalee",
+      "Khazix"
+    ],
+    "abilities": [
+      "Nidalee W",
+      "Kha'Zix Q"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Units from Nidalee W do not count as allies of the target, so they do not break Isolation for Kha'Zix Q.",
+    "severity": "medium",
+    "tags": [
+      "isolation",
+      "negative-entry",
+      "false-confidence"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "yasuo-w-irelia-e",
+    "champions": [
+      "Yasuo",
+      "Irelia"
+    ],
+    "abilities": [
+      "Yasuo W",
+      "Irelia E"
+    ],
+    "interaction_type": "counters",
+    "description": "If Yasuo W stops the blades of Irelia E from converging, it neither stuns nor damages.",
+    "severity": "high",
+    "tags": [
+      "windwall",
+      "projectile-block",
+      "cc-denial"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "yasuo-w-taliyah-r",
+    "champions": [
+      "Yasuo",
+      "Taliyah"
+    ],
+    "abilities": [
+      "Yasuo W",
+      "Taliyah R"
+    ],
+    "interaction_type": "counters",
+    "description": "Yasuo W stops Taliyah R's wall from forming further (existing terrain stays). A surfing Taliyah is stunned for 0.25s and knocked off.",
+    "severity": "high",
+    "tags": [
+      "projectile-block",
+      "ult-interrupt"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "yasuo-w-fizz-r",
+    "champions": [
+      "Yasuo",
+      "Fizz"
+    ],
+    "abilities": [
+      "Yasuo W",
+      "Fizz R"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Yasuo W does not destroy Fizz R's lure — it stops at the block and the eruption forms there.",
+    "severity": "medium",
+    "tags": [
+      "projectile-block",
+      "negative-entry",
+      "false-confidence"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "yasuo-w-lux-w",
+    "champions": [
+      "Yasuo",
+      "Lux"
+    ],
+    "abilities": [
+      "Yasuo W",
+      "Lux W"
+    ],
+    "interaction_type": "counters",
+    "description": "Yasuo W destroys Lux W's wand, denying the shield.",
+    "severity": "medium",
+    "tags": [
+      "projectile-block",
+      "shield-denial"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "samira-w-taliyah-r",
+    "champions": [
+      "Samira",
+      "Taliyah"
+    ],
+    "abilities": [
+      "Samira W",
+      "Taliyah R"
+    ],
+    "interaction_type": "counters",
+    "description": "Samira W stops Taliyah R's wall from forming further (existing terrain stays). A surfing Taliyah is stunned for 0.25s and knocked off.",
+    "severity": "high",
+    "tags": [
+      "projectile-block",
+      "ult-interrupt"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "samira-w-fizz-r",
+    "champions": [
+      "Samira",
+      "Fizz"
+    ],
+    "abilities": [
+      "Samira W",
+      "Fizz R"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Samira W does not destroy Fizz R's lure — it stops at the block and the eruption forms there.",
+    "severity": "medium",
+    "tags": [
+      "projectile-block",
+      "negative-entry",
+      "false-confidence"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "samira-w-lux-w",
+    "champions": [
+      "Samira",
+      "Lux"
+    ],
+    "abilities": [
+      "Samira W",
+      "Lux W"
+    ],
+    "interaction_type": "counters",
+    "description": "Samira W destroys Lux W's wand, denying the shield.",
+    "severity": "medium",
+    "tags": [
+      "projectile-block",
+      "shield-denial"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "braum-e-lux-w",
+    "champions": [
+      "Braum",
+      "Lux"
+    ],
+    "abilities": [
+      "Braum E",
+      "Lux W"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Braum E does not intercept Lux W's wand, unlike Yasuo W and Samira W.",
+    "severity": "low",
+    "tags": [
+      "projectile-block",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "braum-e-graves-q",
+    "champions": [
+      "Braum",
+      "Graves"
+    ],
+    "abilities": [
+      "Braum E",
+      "Graves Q"
+    ],
+    "interaction_type": "warning",
+    "description": "Braum E counts as terrain for Graves Q, triggering its early second detonation.",
+    "severity": "medium",
+    "tags": [
+      "projectile-block",
+      "terrain"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "yasuo-w-olaf-q",
+    "champions": [
+      "Yasuo",
+      "Olaf"
+    ],
+    "abilities": [
+      "Yasuo W",
+      "Olaf Q"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Yasuo W does not destroy Olaf Q — the axe stops and stays on the ground for Olaf to pick up.",
+    "severity": "medium",
+    "tags": [
+      "projectile-block",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "braum-e-olaf-q",
+    "champions": [
+      "Braum",
+      "Olaf"
+    ],
+    "abilities": [
+      "Braum E",
+      "Olaf Q"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Braum E does not destroy Olaf Q — the axe stops and stays on the ground for Olaf to pick up.",
+    "severity": "medium",
+    "tags": [
+      "projectile-block",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "yasuo-w-syndra-e",
+    "champions": [
+      "Yasuo",
+      "Syndra"
+    ],
+    "abilities": [
+      "Yasuo W",
+      "Syndra E"
+    ],
+    "interaction_type": "counters",
+    "description": "Yasuo W blocks the part of Syndra E it touches, and pushed spheres stop at the wall.",
+    "severity": "medium",
+    "tags": [
+      "windwall",
+      "projectile-block",
+      "cc-denial"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "yasuo-w-azir-r",
+    "champions": [
+      "Yasuo",
+      "Azir"
+    ],
+    "abilities": [
+      "Yasuo W",
+      "Azir R"
+    ],
+    "interaction_type": "counters",
+    "description": "Azir R's charge ends early when the soldiers hit Yasuo W.",
+    "severity": "medium",
+    "tags": [
+      "projectile-block",
+      "ult-denial"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "samira-w-azir-r",
+    "champions": [
+      "Samira",
+      "Azir"
+    ],
+    "abilities": [
+      "Samira W",
+      "Azir R"
+    ],
+    "interaction_type": "counters",
+    "description": "Azir R's charge ends early when the soldiers hit Samira W.",
+    "severity": "medium",
+    "tags": [
+      "projectile-block",
+      "ult-denial"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "braum-e-azir-r",
+    "champions": [
+      "Braum",
+      "Azir"
+    ],
+    "abilities": [
+      "Braum E",
+      "Azir R"
+    ],
+    "interaction_type": "counters",
+    "description": "Azir R's charge ends early when the soldiers hit Braum E.",
+    "severity": "medium",
+    "tags": [
+      "projectile-block",
+      "ult-denial"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "yasuo-w-cassiopeia-w",
+    "champions": [
+      "Yasuo",
+      "Cassiopeia"
+    ],
+    "abilities": [
+      "Yasuo W",
+      "Cassiopeia W"
+    ],
+    "interaction_type": "counters",
+    "description": "Cassiopeia W travels as a projectile and can be blocked by Yasuo W.",
+    "severity": "low",
+    "tags": [
+      "windwall",
+      "projectile-block"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "yasuo-w-singed-w",
+    "champions": [
+      "Yasuo",
+      "Singed"
+    ],
+    "abilities": [
+      "Yasuo W",
+      "Singed W"
+    ],
+    "interaction_type": "counters",
+    "description": "Singed W travels as a projectile and can be blocked by Yasuo W.",
+    "severity": "low",
+    "tags": [
+      "windwall",
+      "projectile-block"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "yasuo-w-sion-e",
+    "champions": [
+      "Yasuo",
+      "Sion"
+    ],
+    "abilities": [
+      "Yasuo W",
+      "Sion E"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Yasuo W does not block a minion or monster thrown by Sion E, only the initial projectile.",
+    "severity": "low",
+    "tags": [
+      "windwall",
+      "projectile-exception",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "yasuo-w-seraphine-w",
+    "champions": [
+      "Yasuo",
+      "Seraphine"
+    ],
+    "abilities": [
+      "Yasuo W",
+      "Seraphine W"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Yasuo W can block a missile of Seraphine W, but the heal is unaffected.",
+    "severity": "low",
+    "tags": [
+      "windwall",
+      "projectile-exception",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "yasuo-w-aphelios-q",
+    "champions": [
+      "Yasuo",
+      "Aphelios"
+    ],
+    "abilities": [
+      "Yasuo W",
+      "Aphelios Q"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Yasuo W cannot intercept the attacks of Aphelios Q's turret while it uses Severum.",
+    "severity": "medium",
+    "tags": [
+      "projectile-exception",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "braum-e-aphelios-q",
+    "champions": [
+      "Braum",
+      "Aphelios"
+    ],
+    "abilities": [
+      "Braum E",
+      "Aphelios Q"
+    ],
+    "interaction_type": "no_effect",
+    "description": "Braum E cannot intercept the attacks of Aphelios Q's turret while it uses Severum.",
+    "severity": "medium",
+    "tags": [
+      "projectile-exception",
+      "negative-entry"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "yasuo-w-swain-r",
+    "champions": [
+      "Yasuo",
+      "Swain"
+    ],
+    "abilities": [
+      "Yasuo W",
+      "Swain R"
+    ],
+    "interaction_type": "counters",
+    "description": "Yasuo W blocks only the portion of Swain R's nova it intercepts.",
+    "severity": "low",
+    "tags": [
+      "projectile-block"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "yasuo-w-galio-q",
+    "champions": [
+      "Yasuo",
+      "Galio"
+    ],
+    "abilities": [
+      "Yasuo W",
+      "Galio Q"
+    ],
+    "interaction_type": "counters",
+    "description": "Yasuo W blocks each windblast of Galio Q individually.",
+    "severity": "low",
+    "tags": [
+      "projectile-block"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "braum-e-swain-r",
+    "champions": [
+      "Braum",
+      "Swain"
+    ],
+    "abilities": [
+      "Braum E",
+      "Swain R"
+    ],
+    "interaction_type": "counters",
+    "description": "Braum E blocks only the portion of Swain R's nova it intercepts.",
+    "severity": "low",
+    "tags": [
+      "projectile-block"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "braum-e-galio-q",
+    "champions": [
+      "Braum",
+      "Galio"
+    ],
+    "abilities": [
+      "Braum E",
+      "Galio Q"
+    ],
+    "interaction_type": "counters",
+    "description": "Braum E blocks each windblast of Galio Q individually.",
+    "severity": "low",
+    "tags": [
+      "projectile-block"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "sylas-r-samira-r",
+    "champions": [
+      "Sylas",
+      "Samira"
+    ],
+    "abilities": [
+      "Sylas R",
+      "Samira R"
+    ],
+    "interaction_type": "counters",
+    "description": "Sylas can cast a stolen Samira R without any Style grade.",
+    "severity": "medium",
+    "tags": [
+      "ult-steal"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "sylas-r-neeko-p",
+    "champions": [
+      "Sylas",
+      "Neeko"
+    ],
+    "abilities": [
+      "Sylas R",
+      "Neeko P"
+    ],
+    "interaction_type": "counters",
+    "description": "Sylas R always steals Neeko's real R, whoever Neeko P has her disguised as.",
+    "severity": "low",
+    "tags": [
+      "ult-steal",
+      "disguise"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "akshan-r-neeko-p",
+    "champions": [
+      "Akshan",
+      "Neeko"
+    ],
+    "abilities": [
+      "Akshan R",
+      "Neeko P"
+    ],
+    "interaction_type": "counters",
+    "description": "Akshan R breaks Neeko P's disguise before damaging her and puts it on cooldown.",
+    "severity": "low",
+    "tags": [
+      "disguise"
+    ],
+    "patch_verified": null
+  },
+  {
+    "id": "neeko-p-darius-r",
+    "champions": [
+      "Neeko",
+      "Darius"
+    ],
+    "abilities": [
+      "Neeko P",
+      "Darius R"
+    ],
+    "interaction_type": "counters",
+    "description": "Neeko disguising as a non-champion with Neeko P interrupts Darius R's cast time on her.",
+    "severity": "low",
+    "tags": [
+      "disguise",
+      "ult-denial"
+    ],
+    "patch_verified": null
+  }
+]
