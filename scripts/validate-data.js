@@ -9,6 +9,7 @@ import process from 'node:process'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DATA_PATH = path.join(__dirname, '..', 'src', 'data', 'interactions.json')
 const CHAMPION_TAGS_PATH = path.join(__dirname, '..', 'src', 'data', 'champion_tags.json')
+const ULT_STEAL_TIERS_PATH = path.join(__dirname, '..', 'src', 'data', 'ult_steal_tiers.json')
 
 const INTERACTION_TYPES = new Set([
   'counters',
@@ -249,6 +250,43 @@ function runChampionTagsValidation(errors, warnings) {
   return champions.length
 }
 
+// --- ult_steal_tiers.json ---
+// Editorial ratings of how valuable each ultimate is for Sylas to steal.
+// Champions without a rating are simply treated as neutral.
+
+const STEAL_TIERS = new Set(['great', 'good', 'situational', 'useless'])
+
+function runUltStealTiersValidation(errors) {
+  let data
+  try {
+    data = JSON.parse(readFileSync(ULT_STEAL_TIERS_PATH, 'utf-8'))
+  } catch (error) {
+    errors.push(`Failed to read or parse ${ULT_STEAL_TIERS_PATH}: ${error.message}`)
+    return null
+  }
+
+  if (typeof data !== 'object' || data === null || Array.isArray(data)) {
+    errors.push(`${ULT_STEAL_TIERS_PATH} must contain a JSON object keyed by champion id`)
+    return null
+  }
+
+  for (const [champion, rating] of Object.entries(data)) {
+    if (!DDRAGON_ID.test(champion)) {
+      errors.push(`ult_steal_tiers "${champion}": key is not a Data Dragon id`)
+    }
+    if (!STEAL_TIERS.has(rating?.tier)) {
+      errors.push(
+        `ult_steal_tiers "${champion}": tier must be one of ${[...STEAL_TIERS].join(' | ')}`
+      )
+    }
+    if (rating?.note !== undefined && !isNonEmptyString(rating.note)) {
+      errors.push(`ult_steal_tiers "${champion}": note, when present, must be a non-empty string`)
+    }
+  }
+
+  return Object.keys(data).length
+}
+
 function main() {
   let raw
   try {
@@ -278,6 +316,7 @@ function main() {
   entries.forEach((entry, index) => validateEntry(entry, index, errors, warnings, seenIds))
 
   const championCount = runChampionTagsValidation(errors, warnings)
+  const stealTierCount = runUltStealTiersValidation(errors)
 
   for (const warning of warnings) {
     console.warn(`⚠ ${warning}`)
@@ -294,6 +333,9 @@ function main() {
   console.log(`✓ ${entries.length} interaction entries valid`)
   if (championCount !== null) {
     console.log(`✓ ${championCount} champion_tags entries valid`)
+  }
+  if (stealTierCount !== null) {
+    console.log(`✓ ${stealTierCount} ult_steal_tiers entries valid`)
   }
   process.exit(0)
 }

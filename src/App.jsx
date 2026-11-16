@@ -7,6 +7,8 @@ import { buildCoverageSet } from './utils/coverage'
 import { loadPool, savePool } from './utils/pickPool'
 import interactions from './data/interactions.json'
 import championTags from './data/champion_tags.json'
+import championPositions from './data/champion_positions.json'
+import ultStealTiers from './data/ult_steal_tiers.json'
 import Header from './components/Header/Header'
 import PickInput, { ROLES } from './components/PickInput/PickInput'
 import BanRow from './components/BanRow/BanRow'
@@ -42,9 +44,26 @@ function App() {
 
   const results = [...interactionResults, ...compResults]
 
+  // Champions playable in my role, so suggestions from outside my pool
+  // are at least ones I could plausibly pick in this slot.
+  const myRole = mySlot ? picks[mySlot.team][mySlot.index].role : null
+  const roleCandidates = useMemo(
+    () =>
+      Object.keys(championPositions).filter((championId) =>
+        championPositions[championId].includes(myRole)
+      ),
+    [myRole]
+  )
+
   const suggestions = useMemo(
-    () => suggestPicks({ ...picks, bans, mySlot }, pool, interactions, championTags),
-    [picks, bans, mySlot, pool]
+    () =>
+      suggestPicks({ ...picks, bans, mySlot }, pool, {
+        interactions,
+        championTags,
+        roleCandidates,
+        ultStealTiers,
+      }),
+    [picks, bans, mySlot, pool, roleCandidates]
   )
 
   const hasPicked = mySlot != null && picks[mySlot.team][mySlot.index].championId != null

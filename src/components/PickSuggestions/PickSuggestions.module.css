@@ -209,13 +209,24 @@
 .suggestionHeader {
   display: flex;
   align-items: baseline;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 4px 8px;
 }
 
 .suggestionName {
   color: #e8e6e3;
   font-size: 0.95rem;
   font-weight: 600;
+}
+
+.outsideChip {
+  padding: 0.125rem 0.375rem;
+  background: #21252d;
+  border-radius: 3px;
+  color: #b5b2ad;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .score {
@@ -265,6 +276,10 @@
 
 .dotInfo {
   background: #4f8f9e;
+}
+
+.dotMuted {
+  background: #6b6f78;
 }
 
 .noData {

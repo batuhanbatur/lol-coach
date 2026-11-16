@@ -12,6 +12,12 @@ Read `CLAUDE.md` first: its data-model and pipeline rules still apply.
 - Optional `exception` field: one sentence on when the interaction does not hold. It renders as an always-visible line on the card (added 2026-11-17).
 - `npm run validate-data` must exit 0 before every commit. Commit messages are subject line only.
 
+## Pick suggestions (added 2026-11-17)
+- `src/engine/suggestPicks.js` ranks the player's pick pool by placing each champion in their slot and re-running the two existing engines. No separate scoring model.
+- It can also suggest up to two champions outside the pool, limited to the player's role and to picks with a positive score. Roles come from `src/data/champion_positions.json` (wiki roster, client and external positions combined, read 2026-11-17).
+- `src/data/ult_steal_tiers.json` is EDITORIAL data: Batuhan's own rating of how good each ultimate is for Sylas to steal (great / good / situational / useless, optional note). It is not wiki-verified, only the suggestion ranking reads it, and it must never be copied into `interactions.json`. Unrated champions are neutral. Only Batuhan adds ratings.
+- Open design: "cross suggestions" (an enemy Sylas inherits the ult entries of champions on my team, so e.g. Milio is good when my Lillia can be stolen). Not built.
+
 ## The pipeline
 1. `node scripts/fetch-wiki-corpus.js` dumps every current ability's wiki notes to `research/wiki-corpus/` (gitignored; re-run each patch).
    - `abilities.json`: 1,073 abilities with notes, `projectile` / `spellshield` flags, revision date.

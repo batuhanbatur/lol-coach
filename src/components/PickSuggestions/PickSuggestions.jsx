@@ -23,6 +23,25 @@ function reasonDotClass(kind, severity) {
   return styles.dotInfo
 }
 
+// An enemy ultimate worth (or not worth) stealing — an editorial rating
+// from data/ult_steal_tiers.json, not a verified interaction.
+function stealDotClass(tier) {
+  if (tier === 'great' || tier === 'good') return styles.dotAdvantage
+  if (tier === 'useless') return styles.dotMuted
+  return styles.dotInfo
+}
+
+function stealText(enemyName, steal) {
+  const verdict = {
+    great: 'is a great ult to steal',
+    good: 'is a good ult to steal',
+    situational: 'is a situational ult to steal',
+    useless: 'is close to useless to steal',
+  }[steal.tier]
+  const sentence = `${enemyName} R ${verdict}.`
+  return steal.note ? `${sentence} ${steal.note}` : sentence
+}
+
 // Shows the player's pick pool and, once they have marked their slot,
 // ranks the pool against the current draft. All ranking logic lives in
 // engine/suggestPicks.js; this component only edits the pool and renders
@@ -194,7 +213,9 @@ function PickSuggestions({
     }
 
     const hasReasons =
-      suggestion.interactionCards.length > 0 || suggestion.compGaps.length > 0
+      suggestion.interactionCards.length > 0 ||
+      suggestion.compGaps.length > 0 ||
+      suggestion.steals.length > 0
 
     return (
       <li key={suggestion.championId} className={styles.suggestion}>
@@ -207,6 +228,9 @@ function PickSuggestions({
         <div className={styles.suggestionBody}>
           <div className={styles.suggestionHeader}>
             <span className={styles.suggestionName}>{name}</span>
+            {!suggestion.inPool && (
+              <span className={styles.outsideChip}>Not on your list</span>
+            )}
             <span className={styles.score} title="Advantages minus warnings, weighted by severity">
               {formatScore(suggestion.score)}
             </span>
@@ -221,6 +245,15 @@ function PickSuggestions({
                     aria-hidden="true"
                   />
                   {entry.description}
+                </li>
+              ))}
+              {suggestion.steals.map((steal) => (
+                <li key={`steal-${steal.championId}`} className={styles.reason}>
+                  <span
+                    className={`${styles.dot} ${stealDotClass(steal.tier)}`}
+                    aria-hidden="true"
+                  />
+                  {stealText(championById(steal.championId)?.name ?? steal.championId, steal)}
                 </li>
               ))}
               {suggestion.compGaps.map(({ entry }) => (
