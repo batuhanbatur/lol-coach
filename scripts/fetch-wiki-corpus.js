@@ -88,10 +88,35 @@ function readField(wikitext, field) {
   return match ? match[1].trim() : ''
 }
 
-// Reads the multi-line "|notes = ..." block (ends at the next field or "}}").
+// Reads the multi-line "|notes = ..." block of an ability template.
+// The block ends at the next top-level "|field =" line or at the "}}" that
+// closes the template. Notes often contain their own multi-line templates
+// ({{...}}) and tables ({| ... |}), so we track nesting depth and only
+// treat a line as the end when we are not inside one of those.
 function readNotes(wikitext) {
-  const match = wikitext.match(/^\|\s*notes[ \t]*=([\s\S]*?)(?=^\|\s*[a-z][a-z0-9 _]*=|^\}\}\s*$)/m)
-  return match ? match[1].trim() : ''
+  const startMatch = wikitext.match(/^\|\s*notes[ \t]*=/m)
+  if (!startMatch) return ''
+  const body = wikitext.slice(startMatch.index + startMatch[0].length)
+
+  let templateDepth = 0
+  let tableDepth = 0
+  const kept = []
+  for (const line of body.split('\n')) {
+    const atTopLevel = templateDepth === 0 && tableDepth === 0
+    if (atTopLevel && kept.length > 0) {
+      const isNextField = /^\|\s*[A-Za-z][A-Za-z0-9 _]*=/.test(line)
+      const isTemplateEnd = /^\}\}/.test(line)
+      if (isNextField || isTemplateEnd) break
+    }
+    kept.push(line)
+
+    if (/^\{\|/.test(line)) tableDepth += 1
+    else if (/^\|\}/.test(line) && tableDepth > 0) tableDepth -= 1
+    templateDepth += (line.match(/\{\{/g) ?? []).length
+    templateDepth -= (line.match(/\}\}/g) ?? []).length
+    if (templateDepth < 0) break // the outer template closed on this line
+  }
+  return kept.join('\n').trim()
 }
 
 // A cross-champion mention = a note line on champion A's ability that names
