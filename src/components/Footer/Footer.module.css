@@ -1,10 +1,13 @@
 .footer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
   margin-top: 48px;
   padding: 24px 0 32px;
   border-top: 1px solid #2a2e37;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
 }
 
 .section {
@@ -21,21 +24,8 @@
   margin: 0 0 12px;
 }
 
-.steps {
-  margin: 0;
-  padding-left: 18px;
-  color: #9a9ea8;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.steps li + li {
-  margin-top: 8px;
-}
-
-.stepTitle {
-  color: #e6e6e6;
-  font-weight: 600;
+.example {
+  margin-bottom: 12px;
 }
 
 .body {
@@ -45,8 +35,34 @@
   line-height: 1.6;
 }
 
+.body + .body {
+  margin-top: 10px;
+}
+
+.lead {
+  color: #e6e6e6;
+  font-weight: 600;
+}
+
+.link {
+  color: #9a9ea8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.link:hover {
+  color: #e6e6e6;
+}
+
+.legal {
+  margin: 28px 0 0;
+  color: #7d828c;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
 @media (max-width: 700px) {
-  .footer {
+  .columns {
     flex-direction: column;
     gap: 24px;
   }

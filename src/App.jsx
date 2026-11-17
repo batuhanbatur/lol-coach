@@ -5,6 +5,7 @@ import { analyzeCompWarnings } from './engine/compWarnings'
 import { suggestPicks } from './engine/suggestPicks'
 import { buildCoverageSet } from './utils/coverage'
 import { loadPool, savePool } from './utils/pickPool'
+import { latestVerifiedPatch } from './utils/dataStats'
 import interactions from './data/interactions.json'
 import championTags from './data/champion_tags.json'
 import championPositions from './data/champion_positions.json'
@@ -18,6 +19,12 @@ import Footer from './components/Footer/Footer'
 import styles from './components/PickInput/PickInput.module.css'
 
 const coveredChampions = buildCoverageSet(interactions)
+
+// Shown in the footer as a real example of what the app surfaces.
+const EXAMPLE_ENTRY_ID = 'morde-r-kalista-r'
+const exampleEntry =
+  interactions.find((entry) => entry.id === EXAMPLE_ENTRY_ID) ?? interactions[0]
+const latestPatch = latestVerifiedPatch(interactions)
 
 function emptyTeam() {
   return ROLES.map((role) => ({ championId: null, role }))
@@ -140,7 +147,13 @@ function App() {
       <section aria-label="analysis" className={styles.analysisSection}>
         <AnalysisPanel results={results} champions={champions} version={version} />
       </section>
-      <Footer />
+      <Footer
+        exampleEntry={exampleEntry}
+        champions={champions}
+        version={version}
+        entryCount={interactions.length}
+        latestPatch={latestPatch}
+      />
     </div>
   )
 }
