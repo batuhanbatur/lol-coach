@@ -59,12 +59,11 @@ Read `CLAUDE.md` first; its rules still apply. This file adds the state of the w
 - `src/config/patch.js` still says 26.14, and so does the header.
 - The ME button only appears on hover, so it is effectively hidden on touch screens. Pick suggestions depend on it; make it always visible on touch.
 - The Bans row is shown although the roadmap once removed it. It is now needed (suggestions respect bans), so the roadmap is what is stale.
-- "How it works" and "About" in the footer are generic.
 - Mel W: patch 26.22 coverage says her reflect was removed, but the wiki still lists it as a projectile blocker.
 
 ## Next work, in suggested order
 1. "Try an example draft" button: one click fills both teams and shows real cards. No backend. Do this after batch 2 is merged so the example looks good.
-2. Replace "How it works" with one real example card; make "About" the trust signal (wiki-verified, entry count, verified patch).
+2. Footer: done on 2026-11-17 ("What you get" shows a real card; "About" shows computed entry count and latest verified patch). Still missing: Batuhan's LinkedIn link.
 3. Deploy. Portfolio value saturates early; shipping matters more than more data.
 4. Cross suggestions (design first): an enemy Sylas inherits the ult entries of champions on the player's team, so e.g. Milio is a good pick when the player's Lillia can be stolen.
 5. Screenshot import for picks and bans (needs a backend):
@@ -74,6 +73,15 @@ Read `CLAUDE.md` first; its rules still apply. This file adds the state of the w
 6. Per-card feedback (after launch): green / neutral / red plus optional comment on each card, session id in the URL, one insert-only Supabase table. No email flow. A "most useful" ranking comes from that table later.
 7. Research: batch 4 on spell shields and cleanses; then the second reader (give another model `mentions.json` plus the two-part filter and diff its list against batch 2).
 8. Open design decision: an ability-family schema for "N abilities vs one blocker" and for the 5 entries in `src/data/_pending_schema.json`. Pairwise expansion is the stopgap in use.
+
+## When the project is feature-complete: four things that raise it as a portfolio piece
+Honest assessment on 2026-11-17: about 7.5/10 for product-minded frontend roles, held back because the app is technically small and its depth (data, decisions) is invisible in a two-minute review. Do these after the "Next work" list, in this order:
+1. TypeScript on the engines: convert `matchInteractions.js`, `compWarnings.js` and `suggestPicks.js` (and their tests) first, with real types for entries, drafts and results. Most Berlin frontend listings ask for TypeScript.
+2. README as a case study: the problem in non-League terms, the perspective-neutral data model, how suggestions reuse the engines by simulation, the verification pipeline, the test count, and the roadmap's "rejected, with reasons" list.
+3. One technically meaty feature: the screenshot import (AI vision, Supabase Edge Function, rate limiting). See item 5 under "Next work".
+4. An accessibility pass (keyboard use, contrast, labels, the hover-only ME button) and tests running in CI on every push.
+
+Also before showing it to anyone: Batuhan should be able to explain and extend every engine file himself. Building ban suggestions without AI (the pick-suggestion pattern in reverse) is the suggested practice task.
 
 ## Decisions made on 2026-11-16/17 (so they are not re-argued)
 - Corpus first, LLM second: models filter and phrase wiki text, they never supply facts.
